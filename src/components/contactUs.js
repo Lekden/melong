@@ -1,9 +1,7 @@
 import './Home.css';
 import './contactUs.css';
 import { useNavigate } from 'react-router-dom';
-import { IoHome } from "react-icons/io5";
-import { MdMarkEmailUnread } from "react-icons/md";
-import { FaQuestion } from "react-icons/fa";
+
 
 export default function ContactUs() {
     const navigate = useNavigate();
@@ -16,20 +14,20 @@ export default function ContactUs() {
                 <div className='banner-image'></div>
                 <div className="overlay">
                     <h1 className="heading">Welcome to Melong Tours & Treks</h1>
-                    <p className="subheading">Explore the beauty of our world</p>
+                    <p className="subheading">Explore the beauty of Bhutan</p>
                 </div>
                 <div className="tabs">
-                    <button className="button" onClick={() => navigate('/')}>
-                        Home <IoHome className='icon' />
-                    </button>
+                    <div className="nav-button" onClick={() => navigate('/')}>
+                        Home
+                    </div>
 
-                    <button className="button" onClick={() => navigate('/faq')}>
-                        FAQ <FaQuestion className='icon' />
-                    </button>
+                    <div className="nav-button" onClick={() => navigate('/faq')}>
+                        FAQ
+                    </div>
 
-                    <button className="button" onClick={() => navigate('/contactUs')}>
-                        contact us  <MdMarkEmailUnread className="icon2" />
-                    </button>
+                    <div className="nav-button" onClick={() => navigate('/contactUs')}>
+                        contact us
+                    </div>
                 </div>
             </div>
             <div className='navigation'>
@@ -75,6 +73,10 @@ export default function ContactUs() {
                     <input type="text" placeholder="Subject" className="input-field" />
                     <label>Your Message</label>
                     <textarea placeholder="Message" className="input-field" rows="4"></textarea>
+                </div>
+                <div>
+                    <p style={{ fontWeight: '600', fontSize: '1rem' }}>Contact Information</p>
+                    <p>Phone: +975 12345678 || Email: abc@melong.bt</p>
                 </div>
                 <div className='button-contactUs'>
                     <button className="button" style={{ width: '150px' }} onClick={() => navigate('/')}>

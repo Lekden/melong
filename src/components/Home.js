@@ -2,9 +2,6 @@ import React from 'react';
 import './Home.css'; // Import the CSS file
 import HomeGallery from './HomeGallery'; // Import the HomeGallery component
 import { useNavigate } from 'react-router-dom'; // Import useNavigate from react-router-dom
-import { IoHome } from "react-icons/io5";
-import { MdMarkEmailUnread } from "react-icons/md";
-import { FaQuestion } from "react-icons/fa";
 
 
 
@@ -18,20 +15,20 @@ const Home = () => {
                 <div className='banner-image'></div>
                 <div className="overlay">
                     <h1 className="heading">Welcome to Melong Tours & Treks</h1>
-                    <p className="subheading">Explore the beauty of our world</p>
+                    <p className="subheading">Explore the beauty of Bhutan</p>
                 </div>
                 <div className="tabs">
-                    <button className="button" onClick={() => navigate('/')}>
-                        Home <IoHome className='icon' />
-                    </button>
+                    <div className="nav-button" onClick={() => navigate('/')}>
+                        Home
+                    </div>
 
-                    <button className="button" onClick={() => navigate('/faq')}>
-                        FAQ <FaQuestion className='icon' />
-                    </button>
+                    <div className="nav-button" onClick={() => navigate('/faq')}>
+                        FAQ
+                    </div>
 
-                    <button className="button" onClick={() => navigate('/contactUs')}>
-                        contact us  <MdMarkEmailUnread className="icon2" />
-                    </button>
+                    <div className="nav-button" onClick={() => navigate('/contactUs')}>
+                        contact us
+                    </div>
                 </div>
             </div>
             <div className='navigation'>

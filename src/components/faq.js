@@ -2,9 +2,7 @@
 import { useNavigate } from "react-router-dom";
 import './faq.css';
 import './Home.css';
-import { IoHome } from "react-icons/io5";
-import { MdMarkEmailUnread } from "react-icons/md";
-import { FaQuestion } from "react-icons/fa";
+
 
 export default function Faq() {
     const navigate = useNavigate();
@@ -15,20 +13,20 @@ export default function Faq() {
                 <div className='banner-image'></div>
                 <div className="overlay">
                     <h1 className="heading">Welcome to Melong Tours & Treks</h1>
-                    <p className="subheading">Explore the beauty of our world</p>
+                    <p className="subheading">Explore the beauty of Bhutan</p>
                 </div>
                 <div className="tabs">
-                    <button className="button" onClick={() => navigate('/')}>
-                        Home <IoHome className='icon' />
-                    </button>
+                    <div className="nav-button" onClick={() => navigate('/')}>
+                        Home
+                    </div>
 
-                    <button className="button" onClick={() => navigate('/faq')}>
-                        FAQ <FaQuestion className='icon' />
-                    </button>
+                    <div className="nav-button" onClick={() => navigate('/faq')}>
+                        FAQ
+                    </div>
 
-                    <button className="button" onClick={() => navigate('/contactUs')}>
-                        contact us  <MdMarkEmailUnread className="icon2" />
-                    </button>
+                    <div className="nav-button" onClick={() => navigate('/contactUs')}>
+                        contact us
+                    </div>
                 </div>
             </div>
             <div className='navigation'>
@@ -76,12 +74,19 @@ export default function Faq() {
                 <div className="faq-item">
                     <h3>What currency is used in Bhutan?</h3>
                     <p>The currency used in Bhutan is the Ngultrum (BTN), which is pegged to
-                        the Indian Rupee (INR).</p>
+                        the Indian Rupee (INR). <br /> USD, AUD and most major currencies are accepted for exdchange in Bhutanese bannks.</p>
+
+                </div>
+                <div className="faq-item">
+                    <h3>Is it safe to travel in Bhutan?</h3>
+                    <p>Yes, Bhutan is considered one of the safest countries to travel to. The crime rate is low, and the locals are friendly and welcoming.</p>
+
+
                 </div>
                 <button className="button" onClick={() => navigate('/')}>
                     Back to Home
                 </button>
             </div >
-        </div>
+        </div >
     );
 }
