@@ -1,0 +1,16 @@
+.knowus-container {
+    width: 1600px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.knowus {
+    width: 1600px;
+    max-width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #f9f9f9;
+    padding: 20px;
+}

@@ -1,31 +1,27 @@
-import React from 'react';
-import './Home.css'; // Import the CSS file
-import HomeGallery from './HomeGallery'; // Import the HomeGallery component
-import { useNavigate } from 'react-router-dom'; // Import useNavigate from react-router-dom
+import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom';
+import './Knowus.css';
 
-
-
-const Home = () => {
-    console.log("Home component rendered");
-    const navigate = useNavigate(); // Initialize the navigate function
+export default function Knowus() {
+    const navigate = useNavigate();
 
     return (
-        <div className="wrapper">
+        <div className="wrapper-faq">
             <div className="banner">
                 <div className='banner-image'></div>
                 <div className="overlay">
                     <h1 className="heading">Welcome to Melong Tours & Treks</h1>
                     <p className="subheading">Explore the beauty of Bhutan</p>
-                    <div className='image-banner'></div>
                 </div>
                 <div className="tabs">
-
+                    <div className="nav-button" onClick={() => navigate('/')}>
+                        Home
+                    </div>
 
                     <div className="nav-button" onClick={() => navigate('/faq')}>
                         FAQ
                     </div>
-                    <div className="nav-button" onClick={() => navigate('/Knowus')}>
+                    <div className="nav-button" onClick={() => navigate('/knowus')}>
                         Know us
                     </div>
 
@@ -64,23 +60,30 @@ const Home = () => {
                 </div>
 
             </div>
-
-
-            <div className="info-container">
-                <div className='welcome-container'>
-                    <p className="welcome-text"> <span className="welcome-heading">Whats in store?</span>
-                        <br />We are a travel agency with over 20 years of experience dedicated to providing you with the best travel experiences.
-                        Our team of experts is here to help you plan your next adventure.</p>
-
-                    <p className="welcome-text">Whether you're looking for a relaxing vacation, an adventurous trek in the mountains,
-                        or a cultural experience, our job is to get things working for you. Leave the undesirable job of planning and organizing to us!</p>
+            <div className="knowus-container">
+                <div className="knowus">
+                    <h1 className="knowus-title">Know Us</h1>
+                    <p>About Melong Tours & Treks
+                        With over 20 years of experience, Melong Tours & Treks has been proudly guiding
+                        travelers through the breathtaking landscapes of Bhutan.
+                        From cultural journeys to adventurous treks, we handle every detail
+                        so you can simply enjoy the experience. Let us do the hard work — planning,
+                        organizing, and fine-tuning — while you focus on creating unforgettable memories.
+                    </p><br />
+                    <h3>Meet our team</h3>
+                    <p>
+                        <strong>Passang Singye<br />
+                            Founder & Proprietor </strong><br /><br />
+                        A passionate traveler
+                        with a deep love for Bhutan’s culture and nature. With decades of experience in
+                        the travel industry, he has built Melong on a foundation of trust, expertise, and
+                        personal care. <br />
+                        Our General Manager brings a wealth of operational experience,
+                        ensuring that every tour runs smoothly and every guest feels at home. Together,
+                        they lead a team dedicated to making your journey through Bhutan seamless, memorable,
+                        and truly special.</p>
                 </div>
-                <HomeGallery />
             </div>
-
-        </div >
-
-    );
-};
-
-export default Home;
+        </div>
+    )
+}

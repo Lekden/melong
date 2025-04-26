@@ -1,5 +1,6 @@
 import './Home.css';
 import './contactUs.css';
+import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -24,6 +25,9 @@ export default function ContactUs() {
                     <div className="nav-button" onClick={() => navigate('/faq')}>
                         FAQ
                     </div>
+                    <div className="nav-button" onClick={() => navigate('/knowus')}>
+                        Know us
+                    </div>
 
                     <div className="nav-button" onClick={() => navigate('/contactUs')}>
                         contact us
@@ -35,26 +39,26 @@ export default function ContactUs() {
                     <div className="dropdown">
                         <button className="dropdown-btn">Services</button>
                         <div className="dropdown-content">
-                            <a href="#">Travel</a>
-                            <a href="#">Trek</a>
-                            <a href="#">Guide</a>
-                            <a href="#">Others</a>
+                            <Link to="/test">Travel</Link>
+                            <Link href="#">Trek</Link>
+                            <Link href="#">Guide</Link>
+                            <Link href="#">Others</Link>
                         </div>
                     </div>
                     <div className="dropdown">
                         <button className="dropdown-btn">Booking</button>
                         <div className="dropdown-content">
-                            <a href="#">Online Form</a>
-                            <a href="#">Booking Inquiries</a>
-                            <a href="#">Festival Guide</a>
+                            <Link href="#">Online Form</Link>
+                            <Link href="#">Booking Inquiries</Link>
+                            <Link href="#">Festival Guide</Link>
                         </div>
                     </div>
                     <div className="dropdown">
                         <button className="dropdown-btn">Landmarks</button>
                         <div className="dropdown-content">
-                            <a href="#">Taksang</a>
-                            <a href="#">Jumolhari</a>
-                            <a href="#">Paro Rinpung</a>
+                            <Link href="#">Taksang</Link>
+                            <Link href="#">Jumolhari</Link>
+                            <Link href="#">Paro Rinpung</Link>
                         </div>
                     </div>
                 </div>

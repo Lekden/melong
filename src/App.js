@@ -4,6 +4,7 @@ import Home from './components/Home';
 import Faq from './components/faq';
 import ContactUs from './components/contactUs';
 import Test from './components/Test';
+import Knowus from './components/Knowus';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/faq" element={<Faq />} />
           <Route path="/contactUs" element={<ContactUs />} />
           <Route path="/test" element={<Test />} />
+          <Route path="/knowus" element={<Knowus />} />
         </Routes>
       </div>
     </Router>
