@@ -2,6 +2,9 @@ import React from 'react';
 import './Home.css'; // Import the CSS file
 import HomeGallery from './HomeGallery'; // Import the HomeGallery component
 import { useNavigate } from 'react-router-dom'; // Import useNavigate from react-router-dom
+import { IoHome } from "react-icons/io5";
+import { MdMarkEmailUnread } from "react-icons/md";
+import { FaQuestion } from "react-icons/fa";
 
 
 
@@ -18,12 +21,16 @@ const Home = () => {
                     <p className="subheading">Explore the beauty of our world</p>
                 </div>
                 <div className="tabs">
+                    <button className="button" onClick={() => navigate('/')}>
+                        Home <IoHome className='icon' />
+                    </button>
+
                     <button className="button" onClick={() => navigate('/faq')}>
-                        FAQ
+                        FAQ <FaQuestion className='icon' />
                     </button>
 
                     <button className="button" onClick={() => navigate('/contactUs')}>
-                        Contact Us
+                        contact us  <MdMarkEmailUnread className="icon2" />
                     </button>
                 </div>
             </div>
