@@ -1,16 +1,17 @@
-import React from 'react';
-import './Home.css'; // Import the CSS file
-import HomeGallery from './HomeGallery'; // Import the HomeGallery component
-import { useNavigate } from 'react-router-dom'; // Import useNavigate from react-router-dom
+import './Home.css';
+import './contactUs.css';
+import { useNavigate } from 'react-router-dom';
+import { IoHome } from "react-icons/io5";
+import { MdMarkEmailUnread } from "react-icons/md";
+import { FaQuestion } from "react-icons/fa";
 
+export default function ContactUs() {
+    const navigate = useNavigate();
 
-
-const Home = () => {
-    console.log("Home component rendered");
-    const navigate = useNavigate(); // Initialize the navigate function
 
     return (
-        <div className="wrapper">
+
+        <div className='wrapper-contactUs'>
             <div className="banner">
                 <div className='banner-image'></div>
                 <div className="overlay">
@@ -18,12 +19,16 @@ const Home = () => {
                     <p className="subheading">Explore the beauty of our world</p>
                 </div>
                 <div className="tabs">
+                    <button className="button" onClick={() => navigate('/')}>
+                        Home <IoHome className='icon' />
+                    </button>
+
                     <button className="button" onClick={() => navigate('/faq')}>
-                        FAQ
+                        FAQ <FaQuestion className='icon' />
                     </button>
 
                     <button className="button" onClick={() => navigate('/contactUs')}>
-                        Contact Us
+                        contact us  <MdMarkEmailUnread className="icon2" />
                     </button>
                 </div>
             </div>
@@ -59,24 +64,29 @@ const Home = () => {
             </div>
 
 
-            <div className="info-container">
-                <div className='welcome-container'>
-
-                    <p className="welcome-text"> <span className="welcome-heading">Whats in store?</span>
-                        <br />We are a travel agency with over 20 years of experience dedicated to providing you with the best travel experiences.
-                        Our team of experts is here to help you plan your next adventure.</p>
-                    <p className="welcome-text">Whether you're looking for a relaxing vacation, an adventurous trek in the mountains,
-                        or a cultural experience, our job is to get things working for you. Leave the undesirable job of planning and organizing to us!</p>
+            <div className='contactUs'>
+                <div>
+                    <h1 className="heading">Contact Us</h1>
+                    <label>Your Name</label>
+                    <input type="text" placeholder="Name" className="input-field" />
+                    <label>Your Email</label>
+                    <input type="email" placeholder="Email" className="input-field" />
+                    <label>Your Phone Number</label>
+                    <input type="text" placeholder="Subject" className="input-field" />
+                    <label>Your Message</label>
+                    <textarea placeholder="Message" className="input-field" rows="4"></textarea>
                 </div>
-
-
-                <HomeGallery />
-
-
+                <div className='button-contactUs'>
+                    <button className="button" style={{ width: '150px' }} onClick={() => navigate('/')}>
+                        Submit
+                    </button>
+                    <button className="button" style={{ width: '150px' }} onClick={() => navigate('/')}>
+                        Back to Home
+                    </button>
+                </div>
             </div>
-        </div >
 
-    );
-};
+        </div>
+    )
 
-export default Home;
+}

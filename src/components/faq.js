@@ -1,16 +1,16 @@
-import React from 'react';
-import './Home.css'; // Import the CSS file
-import HomeGallery from './HomeGallery'; // Import the HomeGallery component
-import { useNavigate } from 'react-router-dom'; // Import useNavigate from react-router-dom
 
+import { useNavigate } from "react-router-dom";
+import './faq.css';
+import './Home.css';
+import { IoHome } from "react-icons/io5";
+import { MdMarkEmailUnread } from "react-icons/md";
+import { FaQuestion } from "react-icons/fa";
 
-
-const Home = () => {
-    console.log("Home component rendered");
-    const navigate = useNavigate(); // Initialize the navigate function
+export default function Faq() {
+    const navigate = useNavigate();
 
     return (
-        <div className="wrapper">
+        <div className="wrapper-faq">
             <div className="banner">
                 <div className='banner-image'></div>
                 <div className="overlay">
@@ -18,12 +18,16 @@ const Home = () => {
                     <p className="subheading">Explore the beauty of our world</p>
                 </div>
                 <div className="tabs">
+                    <button className="button" onClick={() => navigate('/')}>
+                        Home <IoHome className='icon' />
+                    </button>
+
                     <button className="button" onClick={() => navigate('/faq')}>
-                        FAQ
+                        FAQ <FaQuestion className='icon' />
                     </button>
 
                     <button className="button" onClick={() => navigate('/contactUs')}>
-                        Contact Us
+                        contact us  <MdMarkEmailUnread className="icon2" />
                     </button>
                 </div>
             </div>
@@ -57,26 +61,27 @@ const Home = () => {
                 </div>
 
             </div>
-
-
-            <div className="info-container">
-                <div className='welcome-container'>
-
-                    <p className="welcome-text"> <span className="welcome-heading">Whats in store?</span>
-                        <br />We are a travel agency with over 20 years of experience dedicated to providing you with the best travel experiences.
-                        Our team of experts is here to help you plan your next adventure.</p>
-                    <p className="welcome-text">Whether you're looking for a relaxing vacation, an adventurous trek in the mountains,
-                        or a cultural experience, our job is to get things working for you. Leave the undesirable job of planning and organizing to us!</p>
+            <div className="faq">
+                <h2>Frequently Asked Questions</h2>
+                <div className="faq-item">
+                    <h3>What is the best time to visit Bhutan?</h3>
+                    <p>The best time to visit Bhutan is during the spring
+                        (March to May) and autumn (September to November) seasons when the weather is pleasant and the landscapes are stunning.</p>
                 </div>
-
-
-                <HomeGallery />
-
-
-            </div>
-        </div >
-
+                <div className="faq-item">
+                    <h3>Do I need a visa to visit Bhutan?</h3>
+                    <p>Yes, all foreign visitors to Bhutan require a visa.
+                        You can apply for a visa through a licensed travel agency in Bhutan.</p>
+                </div>
+                <div className="faq-item">
+                    <h3>What currency is used in Bhutan?</h3>
+                    <p>The currency used in Bhutan is the Ngultrum (BTN), which is pegged to
+                        the Indian Rupee (INR).</p>
+                </div>
+                <button className="button" onClick={() => navigate('/')}>
+                    Back to Home
+                </button>
+            </div >
+        </div>
     );
-};
-
-export default Home;
+}

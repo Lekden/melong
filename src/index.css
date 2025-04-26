@@ -11,3 +11,33 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.icon {
+  color: #d7d5d5;
+  margin-right: 10px;
+  margin-bottom: 8px;
+  size: 35px;
+  margin-top: 7px;
+  margin-left: 5px;
+}
+
+.icon2 {
+  color: #d7d5d5;
+  margin-right: 10px;
+  margin-bottom: 8px;
+  size: 35px;
+  margin-top: 9px;
+  margin-left: 5px;
+}
+
+.icon:hover {
+  color: #007bff;
+  cursor: pointer;
+}
+
+.h1 {
+  font-size: 2rem;
+  color: #000;
+  margin-bottom: 3rem;
+  padding: 0;
+}

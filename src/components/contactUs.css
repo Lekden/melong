@@ -1,0 +1,75 @@
+.wrapper-contactUs {
+    width: 1600px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.contactUs-formwrapper {
+    width: 1600px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.contactUs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 40%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #c3c3c3;
+    gap: 20px;
+    /* Adds spacing between the child elements */
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+
+
+}
+
+.contactUs form {
+    display: flex;
+    flex-direction: column;
+    /* Make form elements stack vertically inside */
+    gap: 10px;
+    /* Adds spacing between form fields */
+    width: 100%;
+}
+
+.contactUs input,
+.contactUs textarea,
+.contactUs button {
+    width: 100%;
+    /* Ensure inputs and buttons take full width */
+    padding: 10px;
+    margin: 5px 0;
+    box-sizing: border-box;
+    border: none;
+}
+
+.button-contactUs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    /* Add space between child elements */
+    color: rgb(0, 0, 0);
+    padding: 0 20px;
+    position: relative;
+    width: 85%;
+    /* Ensure it takes the full width */
+    margin: 0 auto;
+    /* Center it within the page */
+    box-sizing: border-box;
+    /* Include padding and borders in width calculation */
+}
+
+.heading {
+    font-size: 2rem;
+    color: #000;
+    margin-bottom: 1rem;
+    padding: 0;
+}

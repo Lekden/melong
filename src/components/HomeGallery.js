@@ -4,11 +4,11 @@ import './HomeGallery.css'; // Import the CSS file for styling
 const HomeGallery = () => {
     // Array of image URLs (you can replace these with your actual images)
     const images = [
-        '/TigersNest.jpg',
-        '/Gangtey.jpg',
-        '/bhutan.jpg',
-        '/tashichho-dzong.jpg',
-        '/Buddha.jpg',
+        '/images/TigersNest.jpg',
+        '/images/Gangtey.jpg',
+        '/images/bhutan.jpg',
+        '/images/tashichho-dzong.jpg',
+        '/images/Buddha.jpg',
     ];
 
     // State to track the current image index
@@ -27,12 +27,15 @@ const HomeGallery = () => {
     };
 
     return (
+
         <div className="home-gallery">
+            <div> Sneak peek at Bhutan</div>
             {/* Image Display */}
             <div className="image-container">
+
                 <img
                     src={images[currentImageIndex]}
-                    alt={`Gallery Image ${currentImageIndex + 1}`}
+                    alt={`Gallery ${currentImageIndex + 1}`}
                     className="gallery-image"
                 />
             </div>
