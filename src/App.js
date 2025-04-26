@@ -6,7 +6,7 @@ import ContactUs from './components/contactUs';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/melong">
       <div className="container">
         <Routes>
           <Route path="/" element={<Home />} />
