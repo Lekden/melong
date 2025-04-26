@@ -13,6 +13,7 @@
 .banner {
     display: flex;
     justify-content: space-between;
+
     /* Space between logo, text, and tabs */
     align-items: center;
     height: 15vh;
@@ -61,7 +62,6 @@
     /* Center the overlay horizontally */
     transform: translate(-50%, -50%);
     /* Offset by 50% of its width and height */
-
 }
 
 /* Heading styles */
@@ -200,11 +200,11 @@
     gap: 1rem;
     /* Add space between child elements */
     color: rgb(0, 0, 0);
-    padding: 0 20px;
+
     position: relative;
     width: 85%;
     /* Ensure it takes the full width */
-    margin: 0 auto;
+    margin: auto;
     /* Center it within the page */
     box-sizing: border-box;
     /* Include padding and borders in width calculation */

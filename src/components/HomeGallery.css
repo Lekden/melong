@@ -1,50 +1,44 @@
 .home-gallery {
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
     width: 700px;
-    position: relative;
-    padding: 20px;
-    height: 450px;
-    /* Fixed height for the container */
-    overflow: hidden;
-    /* Ensure that any overflowing image parts are hidden */
+    /* Let height grow naturally */
+}
+
+.gallery-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #333;
 }
 
 .image-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 100%;
-    height: 100%;
+    width: 100%;
+    height: 400px;
+    /* Only the image container has fixed height */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin-top: 0;
-
 }
 
 .gallery-image {
     width: 100%;
-    max-width: 600px;
-    /* Adjust based on your desired image size */
-    border-radius: 8px;
-    width: 100%;
-    /* Scale the image to fill the container's width */
     height: 100%;
-    /* Scale the image to fill the container's height */
     object-fit: cover;
-    /* Ensures the image covers the area without distortion */
+    /* <<< IMPORTANT */
+    border-radius: 8px;
 }
 
 .gallery-controls {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin-top: 5px;
     display: flex;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 600px;
+    justify-content: space-around;
+    width: 150px;
+    margin-left: 30px;
+
 }
 
 .prev-btn,
@@ -55,7 +49,7 @@
     padding: 10px;
     cursor: pointer;
     border-radius: 50%;
-    font-size: 18px;
+    font-size: 16px;
     transition: background-color 0.3s ease;
 }
 
