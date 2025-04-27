@@ -42,6 +42,7 @@
     width: 7%;
     height: 80%;
     border-radius: 8px;
+    z-index: 2;
 }
 
 /* Tabs (Buttons) container */
@@ -272,6 +273,7 @@
     padding: 10px;
     color: rgb(255, 255, 255);
     font-weight: bold;
+    z-index: 1;
 }
 
 @keyframes moveText {
@@ -280,6 +282,6 @@
     }
 
     100% {
-        transform: translateX(-90%);
+        transform: translateX(-100%);
     }
 }
