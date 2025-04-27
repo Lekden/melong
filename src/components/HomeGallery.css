@@ -44,18 +44,20 @@
 .prev-btn,
 .next-btn {
     background-color: rgba(24, 73, 158, 0.5);
-    color: rgb(241, 228, 228);
+    color: rgb(0, 0, 0);
     border: none;
     padding: 10px;
     cursor: pointer;
     border-radius: 50%;
     font-size: 16px;
+    font-weight: bold;
     transition: background-color 0.3s ease;
 }
 
 .prev-btn:hover,
 .next-btn:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(88, 82, 82, 0.8);
+    color: white;
 }
 
 .prev-btn:focus,

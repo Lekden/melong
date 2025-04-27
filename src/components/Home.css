@@ -20,7 +20,6 @@
     padding: 0 20px;
     position: relative;
     width: 100%;
-
     background: linear-gradient(to right, #a5a827, #d29341);
 }
 
@@ -109,12 +108,12 @@
     justify-content: center;
     align-items: center;
     border: none;
-    height: 35px;
-    width: 75px;
+
     font-size: 1rem;
     color: rgb(0, 0, 0);
     border-radius: 5px;
     margin-top: 1px;
+    margin-left: 5px;
 }
 
 .tabs :hover {
@@ -141,6 +140,7 @@
     position: relative;
     background-color: #272525;
     gap: 20px;
+    z-index: 10;
 
 }
 
@@ -187,6 +187,7 @@
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 1;
     border-radius: 5px;
+    z-index: 20;
 
 }
 
@@ -250,7 +251,8 @@
     height: 50%;
     margin-top: 20px;
     box-sizing: border-box;
-    /* Include padding and borders in width calculation */
+
+
 }
 
 .welcome-heading {
@@ -259,4 +261,25 @@
     color: #333;
     padding: 0;
     font-weight: bold;
+}
+
+.moving-text {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    animation: moveText 20s linear infinite;
+    padding: 10px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+
+@keyframes moveText {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-90%);
+    }
 }

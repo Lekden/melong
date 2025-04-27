@@ -18,6 +18,9 @@ const Home = () => {
                     <div className="overlay">
                         <h1 className="heading">Welcome to Melong Tours & Treks</h1>
                         <p className="subheading">Explore the beauty of Bhutan</p>
+                        <div className="moving-text">
+                            Welcome to Melong Tours & Treks — Explore Bhutan with us!
+                        </div>
                         <div className='image-banner'></div>
                     </div>
                     <div className="tabs">

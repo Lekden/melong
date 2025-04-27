@@ -3,7 +3,7 @@
     margin-left: auto;
     margin-right: auto;
     background-color: #f9f9f9;
-    padding: 30px;
+    padding: 20px;
 }
 
 .banner-content {
@@ -15,4 +15,24 @@
     /* center inside banner */
     height: 100%;
     position: relative;
+}
+
+.knowus-intro {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    color: rgb(0, 0, 0);
+    position: relative;
+    width: 100%;
+    margin: auto;
+    box-sizing: border-box;
+    /* Include padding and borders in width calculation */
+
+}
+
+.knowus-intro div {
+    background-color: rgb(217, 217, 205);
+    border-radius: 6px;
+    padding: 8px;
+    width: 100%;
 }
