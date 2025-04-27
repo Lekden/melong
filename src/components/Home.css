@@ -1,7 +1,7 @@
 .wrapper {
     width: 100%;
     /* Adjust the width to make it narrower */
-    max-width: 1600px;
+    max-width: 100%;
     /* Optional: set a maximum width for the container */
     margin-left: auto;
     /* Push to the right */
@@ -13,17 +13,27 @@
 .banner {
     display: flex;
     justify-content: space-between;
-
     /* Space between logo, text, and tabs */
     align-items: center;
     height: 15vh;
     color: rgb(0, 0, 0);
     padding: 0 20px;
     position: relative;
+    width: 100%;
+
     background: linear-gradient(to right, #a5a827, #d29341);
 }
 
-
+.banner-content {
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    /* center inside banner */
+    height: 100%;
+    position: relative;
+}
 
 /* Banner image (logo on the left) */
 .banner-image {
@@ -40,8 +50,10 @@
     position: absolute;
     /* Positioning tabs at the top-right corner */
     top: 10px;
-    right: 20px;
+    right: 1%;
     display: flex;
+    gap: 12px;
+
     /* Space between the tabs */
 }
 
@@ -67,13 +79,14 @@
 /* Heading styles */
 .heading {
     padding-top: 1rem;
-    font-size: 30px;
     margin: 0;
+    font-size: 5px;
+    font-weight: 600;
 }
 
 /* Subheading styles */
 .subheading {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin-top: 5px;
 }
 
@@ -97,7 +110,7 @@
     align-items: center;
     border: none;
     height: 35px;
-    width: 90px;
+    width: 75px;
     font-size: 1rem;
     color: rgb(0, 0, 0);
     border-radius: 5px;
@@ -119,14 +132,16 @@
 
 .navigation {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     /* Align items to the right */
     align-items: center;
-    height: 6vh;
+    width: 100%;
+    height: 4vh;
     padding: 0 20px;
     position: relative;
     background-color: #272525;
     gap: 20px;
+
 }
 
 
@@ -134,8 +149,12 @@
 /* Container for all dropdowns */
 .dropdown-container {
     display: flex;
-    gap: 20px;
-    /* Space between dropdowns */
+    justify-content: center;
+    /* Center items horizontally */
+    align-items: center;
+    /* Center items vertically */
+    gap: 25px;
+    /* Space between each dropdown */
 }
 
 /* Styling for each dropdown */
@@ -149,10 +168,13 @@
     background-color: #272525;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 10px;
+    width: 120px;
     cursor: pointer;
     border-radius: 5px;
     font-size: 16px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 }
 
 /* Style for dropdown content (hidden by default) */
@@ -165,17 +187,11 @@
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 1;
     border-radius: 5px;
+
 }
 
-/* Display the dropdown content when hovering over the button */
-.dropdown-btn:hover+.dropdown-content {
+.dropdown:hover .dropdown-content {
     display: block;
-    color: green;
-}
-
-.dropdown-content:hover {
-    display: block;
-    color: green;
 }
 
 /* Style links inside the dropdown */
