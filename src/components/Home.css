@@ -1,231 +1,14 @@
-.wrapper {
-    width: 100%;
-    /* Adjust the width to make it narrower */
-    max-width: 100%;
-    /* Optional: set a maximum width for the container */
-    margin-left: auto;
-    /* Push to the right */
-    margin-right: auto;
-    /* Push to the left */
-}
-
-
-.banner {
-    display: flex;
-    justify-content: space-between;
-    /* Space between logo, text, and tabs */
-    align-items: center;
-    height: 15vh;
-    color: rgb(0, 0, 0);
-    padding: 0 20px;
-    position: relative;
-    width: 100%;
-    background: linear-gradient(to right, #a5a827, #d29341);
-}
-
-.banner-content {
-    width: 85%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 auto;
-    /* center inside banner */
-    height: 100%;
-    position: relative;
-}
-
-/* Banner image (logo on the left) */
-.banner-image {
-    background-image: url("/src/components/images/banner.jpg");
-    background-size: auto 99%;
-    background-position: center;
-    width: 7%;
-    height: 80%;
-    border-radius: 8px;
-    z-index: 2;
-}
-
-/* Tabs (Buttons) container */
-.tabs {
-    position: absolute;
-    /* Positioning tabs at the top-right corner */
-    top: 10px;
-    right: 1%;
-    display: flex;
-    gap: 12px;
-
-    /* Space between the tabs */
-}
-
-.tabs :hover {
-    cursor: pointer;
-    background: #000;
-    /* Change cursor to pointer on hover */
-}
-
-/* Overlay for the text content */
-.overlay {
-    text-align: center;
-    position: absolute;
-    /* Position the overlay absolutely */
-    top: 50%;
-    /* Center the overlay vertically */
-    left: 50%;
-    /* Center the overlay horizontally */
-    transform: translate(-50%, -50%);
-    /* Offset by 50% of its width and height */
-}
-
-/* Heading styles */
-.heading {
-    padding-top: 1rem;
-    margin: 0;
-    font-size: 5px;
-    font-weight: 600;
-}
-
-/* Subheading styles */
-.subheading {
-    font-size: 1rem;
-    margin-top: 5px;
-}
-
-.button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #242222;
-    border: none;
-    height: 35px;
-    width: 110px;
-    font-size: 0.8rem;
-    color: white;
-    border-radius: 5px;
-    margin-top: 1px;
-}
-
-.nav-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-
-    font-size: 1rem;
-    color: rgb(0, 0, 0);
-    border-radius: 5px;
-    margin-top: 1px;
-    margin-left: 5px;
-}
-
-.tabs :hover {
-    cursor: pointer;
-    background: #326088;
-    /* Change cursor to pointer on hover */
-}
-
-.button:hover {
-    cursor: pointer;
-    background-color: #326088;
-    color: white;
-    /* Change cursor to pointer on hover */
-}
-
-.navigation {
-    display: flex;
-    justify-content: center;
-    /* Align items to the right */
-    align-items: center;
-    width: 100%;
-    height: 4vh;
-    padding: 0 20px;
-    position: relative;
-    background-color: #272525;
-    gap: 20px;
-    z-index: 10;
-
-}
-
-
-
-/* Container for all dropdowns */
-.dropdown-container {
-    display: flex;
-    justify-content: center;
-    /* Center items horizontally */
-    align-items: center;
-    /* Center items vertically */
-    gap: 25px;
-    /* Space between each dropdown */
-}
-
-/* Styling for each dropdown */
-.dropdown {
-    position: relative;
-    /* Ensure dropdown content is positioned relative to the parent */
-}
-
-/* Button for each dropdown */
-.dropdown-btn {
-    background-color: #272525;
-    color: white;
-    border: none;
-    padding: 10px;
-    width: 120px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 16px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-}
-
-/* Style for dropdown content (hidden by default) */
-.dropdown-content {
-    display: none;
-    /* Hidden by default */
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    border-radius: 5px;
-    z-index: 20;
-
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* Style links inside the dropdown */
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-/* Change color when hovering over links */
-.dropdown-content a:hover {
-    background-color: #6f6a6a;
-    color: white;
-}
-
 /* Parent container for alignment */
 .info-container {
     display: flex;
     justify-content: center;
-    /* Centers items horizontally */
     gap: 1rem;
-    /* Add space between child elements */
     color: rgb(0, 0, 0);
-
     position: relative;
     width: 85%;
-    /* Ensure it takes the full width */
     margin: auto;
-    /* Center it within the page */
     box-sizing: border-box;
-    /* Include padding and borders in width calculation */
+    overflow: hidden;
 }
 
 /* Home gallery container */
@@ -234,12 +17,10 @@
     align-items: center;
     justify-content: center;
     width: 50%;
-    /* Adjust width as needed */
     padding-top: 10px;
     margin-left: 0;
     margin-right: 0;
     box-sizing: border-box;
-    /* Include padding and borders in width calculation */
 }
 
 /* Welcome container */
@@ -253,7 +34,6 @@
     margin-top: 20px;
     box-sizing: border-box;
 
-
 }
 
 .welcome-heading {
@@ -264,24 +44,118 @@
     font-weight: bold;
 }
 
+
+
+/* Moving Text */
 .moving-text {
     width: 100%;
     overflow: hidden;
     white-space: nowrap;
+    /* Prevent text from wrapping */
     box-sizing: border-box;
-    animation: moveText 20s linear infinite;
-    padding: 10px;
-    color: rgb(255, 255, 255);
+    animation: moveText 50s linear infinite;
+    /* Animation for moving text */
+    color: rgb(22, 19, 19);
     font-weight: bold;
     z-index: 1;
+    position: relative;
+    margin-top: 0.5rem;
+    /* Ensure it stays within the container */
 }
 
+/* Example animation (moving the text from right to left) */
 @keyframes moveText {
     0% {
         transform: translateX(100%);
+        /* Start from the right */
     }
 
     100% {
         transform: translateX(-100%);
+        /* Move to the left */
     }
+}
+
+
+/* Media Queries for Mobile */
+@media (max-width: 400px) {
+
+    body,
+    html {
+        height: 100%;
+        overflow-y: hidden;
+        margin: 0;
+        font-size: 14px;
+        /* Adjust font size */
+    }
+
+
+
+    /* Info container with adjusted gap and width */
+    .info-container {
+        display: flex;
+        flex-direction: column;
+        /* Stack elements vertically */
+        align-items: center;
+        width: 100%;
+        gap: 10px;
+        /* Adjust gap for mobile */
+        padding: 10px;
+        /* Add padding */
+        box-sizing: border-box;
+    }
+
+    /* Adjust home gallery for mobile screens */
+    .home-gallery {
+        width: 80%;
+        /* Adjust width */
+        padding-top: 15px;
+    }
+
+
+    /* Parent container for alignment */
+    .info-container {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        color: rgb(0, 0, 0);
+        position: relative;
+        width: 85%;
+        margin: auto;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    /* Home gallery container */
+    .home-gallery {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+        padding-top: 10px;
+        margin-left: 0;
+        margin-right: 0;
+        box-sizing: border-box;
+    }
+
+    /* Welcome container */
+    .welcome-container {
+        background-color: #f0f0f0;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        width: 50%;
+        height: 50%;
+        margin-top: 20px;
+        box-sizing: border-box;
+    }
+
+    .welcome-heading {
+        font-size: 1rem;
+        margin-bottom: 10px;
+        color: #333;
+        padding: 0;
+        font-weight: bold;
+    }
+
 }

@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './components/Home';
 import Faq from './components/faq';
 import ContactUs from './components/contactUs';
-import Test from './components/Test';
+import Treks from './components/Treks';
 import Knowus from './components/Knowus';
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/faq" element={<Faq />} />
           <Route path="/contactUs" element={<ContactUs />} />
-          <Route path="/test" element={<Test />} />
+          <Route path="/treks" element={<Treks />} />
           <Route path="/knowus" element={<Knowus />} />
         </Routes>
       </div>
