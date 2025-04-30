@@ -1,0 +1,62 @@
+/* Wrapper for mobile menu */
+.mobile-menu {
+    position: relative;
+    z-index: 50;
+  }
+  
+  /* Dropdown container */
+  .dropdown-mobile {
+    background-color:wheat;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(62, 59, 59, 0.2);
+    padding: 10px;
+    width: 180px;
+    position: absolute;
+    top: 45px;
+    left: 10px;
+  }
+  
+  /* Each block (Services, Booking, etc.) */
+  .dropdown-block,
+  .dropdown-blocks {
+    margin-bottom: 10px;
+  }
+  
+  /* Main button */
+  .dropdown-options {
+    background-color: #525252;
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    text-align: left;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Hover effect */
+  .dropdown-options:hover {
+    background-color: #444;
+  }
+  
+  /* Submenu */
+  .submenu {
+    margin-top: 5px;
+    padding-left: 10px;
+    font-size: 20px;
+  }
+  
+  .submenu div {
+    background-color: #e9e9e9;
+    padding: 8px;
+    margin-top: 4px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .submenu div:hover {
+    background-color: #cfcfcf;
+  }
+  

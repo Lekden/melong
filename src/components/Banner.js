@@ -4,6 +4,7 @@ import { AiFillHome } from "react-icons/ai";
 import { FaQuestion } from "react-icons/fa6";
 import { MdContactMail } from "react-icons/md";
 import { FaPeoplePulling } from "react-icons/fa6";
+import Hamburger from "./Hamburger";
 
 export default function Banner() {
   console.log("Home component rendered");
@@ -12,12 +13,16 @@ export default function Banner() {
   return (
     <div className="wrapper">
       <div className="banner">
+        <div className="hamburger">
+          <Hamburger />
+        </div>
         <div className="banner-content">
           <div className="banner-image"></div>
           <div className="overlay">
             <h1 className="heading">Melong Tours & Treks</h1>
             <p className="subheading">Explore the beauty of Bhutan</p>
           </div>
+
           <div className="tabs">
             <Link className="home-icon" to="/">
               <AiFillHome size={28} />
