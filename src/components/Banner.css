@@ -16,7 +16,7 @@
     padding: 0 20px;
     position: relative;
     width: 100%;
-    background: linear-gradient(to right, #dadd23, #d18a2e);
+  
 }
 
 .banner-content {
@@ -41,6 +41,20 @@
     border-radius: 8px;
     z-index: 2;
 }
+.banner-background {
+        position: absolute;
+        width: 100%; /* Small patch size */
+        height: 100%;
+        right: 1%;
+        background-size: cover;
+        background-image: url("/src/components/images/taksang.jpg");
+        background-position: center;
+        border-radius: 8px;
+        opacity: 0.4; /* Low opacity */
+        z-index: 1; /* Under the title if needed */
+        pointer-events: none; /* Allow clicks to go through */
+    }
+    
 
 /* Tabs (Buttons) container */
 .tabs {
@@ -74,14 +88,14 @@
     margin: 0;
     padding: 0;
     font-size: 2.5rem;
-    color: white;
+    color: rgb(0, 0, 0);
   }
   
   .subheading {
     margin: 0;
     padding: 0;
     font-size: 1.2rem;
-    color: white;
+    color: rgb(0, 0, 0);
   }
 
 .button {
@@ -137,7 +151,9 @@
     background-color: #272525;
     gap: 20px;
     z-index: 10;
+
 }
+
 
 /* Dropdown Container */
 .dropdown-container {

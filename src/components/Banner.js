@@ -5,6 +5,7 @@ import { FaQuestion } from "react-icons/fa6";
 import { MdContactMail } from "react-icons/md";
 import { FaPeoplePulling } from "react-icons/fa6";
 import Hamburger from "./Hamburger";
+import { VscFeedback } from "react-icons/vsc";
 
 export default function Banner() {
   console.log("Home component rendered");
@@ -13,6 +14,7 @@ export default function Banner() {
   return (
     <div className="wrapper">
       <div className="banner">
+        <div className="banner-background"></div>
         <div className="hamburger">
           <Hamburger />
         </div>
@@ -28,10 +30,9 @@ export default function Banner() {
               <AiFillHome size={28} />
               <span style={{ fontSize: "14px" }}>To Home</span>
             </Link>
-            <Link className="home-icon" to="/faq">
-              <FaQuestion size={28} />
-
-              <span style={{ fontSize: "14px" }}>FAQ</span>
+            <Link className="home-icon" to="/">
+              <VscFeedback size={28} />
+              <span style={{ fontSize: "14px" }}> Reviews</span>
             </Link>
             <Link className="home-icon" to="/knowus">
               <FaPeoplePulling size={28} />
@@ -40,6 +41,10 @@ export default function Banner() {
             <Link className="home-icon" to="/contactus">
               <MdContactMail size={28} />
               <span style={{ fontSize: "14px" }}>Contact us</span>
+            </Link>
+            <Link className="home-icon" to="/faq">
+              <FaQuestion size={28} />
+              <span style={{ fontSize: "14px" }}>FAQ</span>
             </Link>
           </div>
         </div>

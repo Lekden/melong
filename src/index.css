@@ -35,9 +35,3 @@ code {
   cursor: pointer;
 }
 
-.test-image {
-  border: 2px solid red;
-  /* Add a border for visibility */
-  max-width: 100%;
-  height: auto;
-}
