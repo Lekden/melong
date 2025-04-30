@@ -82,3 +82,10 @@
     height: 100%;
     position: relative;
 }
+
+@media (min-width: 375px) and (max-width:475px) {
+
+    .contactUs {
+        width: 83%;
+    }
+}

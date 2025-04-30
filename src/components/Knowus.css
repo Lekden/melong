@@ -36,3 +36,10 @@
     padding: 8px;
     width: 100%;
 }
+
+@media (min-width:375px) and (max-width:475px) {
+.knowus {
+    width: 85%;
+}
+    
+}
