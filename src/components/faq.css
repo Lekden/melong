@@ -3,9 +3,8 @@
     max-width: 60%;
     margin-left: auto;
     margin-right: auto;
+    overflow-x: hidden;
 }
-
-
 
 .faq-item h3 {
     color: black;
@@ -24,5 +23,5 @@
         max-width: 90%;
         background-color: #ffffff;
     }
-        
-    }
+
+}

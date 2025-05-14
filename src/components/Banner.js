@@ -8,76 +8,77 @@ import Hamburger from "./Hamburger";
 import { VscFeedback } from "react-icons/vsc";
 
 export default function Banner() {
-  console.log("Home component rendered");
-  const navigate = useNavigate(); // Initialize the navigate function
+    console.log("Home component rendered");
+    const navigate = useNavigate(); // Initialize the navigate function
 
-  return (
-    <div className="wrapper">
-      <div className="banner">
-        <div className="banner-background"></div>
-        <div className="hamburger">
-          <Hamburger />
-        </div>
-        <div className="banner-content">
-          <div className="banner-image"></div>
-          <div className="overlay">
-            <h1 className="heading">Melong Tours & Treks</h1>
-            <p className="subheading">Explore the beauty of Bhutan</p>
-          </div>
+    return (
+        <div className="wrapper">
+            <div className="banner">
+                <div className="banner-background"></div>
+                <div className="hamburger">
+                    <Hamburger />
+                </div>
+                <div className="banner-content">
+                    <div className="banner-image"></div>
+                    <div className="overlay">
+                        <h1 className="heading">Melong Tours & Treks</h1>
+                        <p className="subheading">Explore the beauty of Bhutan</p>
+                    </div>
 
-          <div className="tabs">
-            <Link className="home-icon" to="/">
-              <AiFillHome size={28} />
-              <span style={{ fontSize: "14px" }}>To Home</span>
-            </Link>
-            <Link className="home-icon" to="/">
-              <VscFeedback size={28} />
-              <span style={{ fontSize: "14px" }}> Reviews</span>
-            </Link>
-            <Link className="home-icon" to="/knowus">
-              <FaPeoplePulling size={28} />
-              <span style={{ fontSize: "14px" }}>Know us</span>
-            </Link>
-            <Link className="home-icon" to="/contactus">
-              <MdContactMail size={28} />
-              <span style={{ fontSize: "14px" }}>Contact us</span>
-            </Link>
-            <Link className="home-icon" to="/faq">
-              <FaQuestion size={28} />
-              <span style={{ fontSize: "14px" }}>FAQ</span>
-            </Link>
-          </div>
+                    <div className="tabs">
+                        <Link className="home-icon" to="/">
+                            <AiFillHome size={28} />
+                            <span style={{ fontSize: "14px" }}>To Home</span>
+                        </Link>
+                        <Link className="home-icon" to="/">
+                            <VscFeedback size={28} />
+                            <span style={{ fontSize: "14px" }}> Reviews</span>
+                        </Link>
+                        <Link className="home-icon" to="/knowus">
+                            <FaPeoplePulling size={28} />
+                            <span style={{ fontSize: "14px" }}>Know us</span>
+                        </Link>
+                        <Link className="home-icon" to="/contactus">
+                            <MdContactMail size={28} />
+                            <span style={{ fontSize: "14px" }}>Contact us</span>
+                        </Link>
+                        <Link className="home-icon" to="/faq">
+                            <FaQuestion size={28} />
+                            <span style={{ fontSize: "14px" }}>FAQ</span>
+                        </Link>
+                    </div>
+                </div>
+            </div>
+            <div iv className="navigation">
+                <h1 className="headingmobile">Melong Tours & Treks</h1>
+                <div className="dropdown-container">
+                    <div className="dropdown">
+                        <button className="dropdown-btn">Services</button>
+                        <div className="dropdown-content">
+                            <Link to="/treks">Trek</Link>
+                            <Link href="#">Hotel & Logistics</Link>
+                            <Link href="#">Guide Service</Link>
+                            <Link href="#">Hire Cars</Link>
+                        </div>
+                    </div>
+                    <div className="dropdown">
+                        <button className="dropdown-btn">Booking</button>
+                        <div className="dropdown-content">
+                            <Link href="#">Manage Booking</Link>
+                            <Link href="#">Booking Inquiries</Link>
+                            <Link href="#">Festival Guide</Link>
+                        </div>
+                    </div>
+                    <div className="dropdown">
+                        <button className="dropdown-btn">Landmarks</button>
+                        <div className="dropdown-content">
+                            <Link href="#">Taksang</Link>
+                            <Link href="#">Jumolhari</Link>
+                            <Link href="#">Paro Rinpung</Link>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div className="navigation">
-        <div className="dropdown-container">
-          <div className="dropdown">
-            <button className="dropdown-btn">Services</button>
-            <div className="dropdown-content">
-              <Link to="/treks">Trek</Link>
-              <Link href="#">Hotel & Logistics</Link>
-              <Link href="#">Guide Service</Link>
-              <Link href="#">Hire Cars</Link>
-            </div>
-          </div>
-          <div className="dropdown">
-            <button className="dropdown-btn">Booking</button>
-            <div className="dropdown-content">
-              <Link href="#">Manage Booking</Link>
-              <Link href="#">Booking Inquiries</Link>
-              <Link href="#">Festival Guide</Link>
-            </div>
-          </div>
-          <div className="dropdown">
-            <button className="dropdown-btn">Landmarks</button>
-            <div className="dropdown-content">
-              <Link href="#">Taksang</Link>
-              <Link href="#">Jumolhari</Link>
-              <Link href="#">Paro Rinpung</Link>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+    );
 }

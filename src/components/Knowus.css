@@ -4,6 +4,7 @@
     margin-right: auto;
     background-color: #f9f9f9;
     padding: 20px;
+    overflow-x: hidden;
 }
 
 .banner-content {
@@ -38,8 +39,8 @@
 }
 
 @media (min-width:375px) and (max-width:475px) {
-.knowus {
-    width: 85%;
-}
-    
+    .knowus {
+        width: 85%;
+    }
+
 }
