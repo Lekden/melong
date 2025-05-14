@@ -24,19 +24,18 @@ export default function ContactUs() {
             message: formData.message,
         };
 
-        // First email to site owner
+        // Send main email to site
         emailjs.send(serviceID, templateID, templateParams, publicKey)
             .then((response) => {
-
                 console.log('SUCCESS!', response.status, response.text);
-                alert("You email has been sent successfully.")
+                alert("Your email has been sent successfully.");
 
-                // Now send auto-reply to user
                 const autoReplyParams = {
                     requestor: formData.requestor,
-                    email: formData.email
+                    email: formData.email,
                 };
 
+                // Send auto-reply to user
                 emailjs.send(serviceID, autoReplyTemplateID, autoReplyParams, publicKey)
                     .then((res) => {
                         console.log('Auto-reply sent:', res.text);
@@ -50,8 +49,13 @@ export default function ContactUs() {
             .catch((error) => {
                 console.error('Main email error:', error.text);
             });
-
     }
+
+    const handleKeyDown = (e) => {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+        }
+    };
 
     return (
         <div>
@@ -59,6 +63,7 @@ export default function ContactUs() {
             <div className='contactUs'>
                 <form onSubmit={handleSubmit}>
                     <h1 className="heading1">Contact Us</h1>
+
                     <label>Your Name</label>
                     <input
                         type="text"
@@ -66,7 +71,10 @@ export default function ContactUs() {
                         className="input-field"
                         value={formData.requestor}
                         onChange={(e) => setFormData({ ...formData, requestor: e.target.value })}
+                        onKeyDown={handleKeyDown}
+                        required
                     />
+
                     <label>Your Email</label>
                     <input
                         type="email"
@@ -74,7 +82,9 @@ export default function ContactUs() {
                         className="input-field"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        required
                     />
+
                     <label>Your Phone Number</label>
                     <input
                         type="text"
@@ -83,6 +93,7 @@ export default function ContactUs() {
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     />
+
                     <label>Your Message</label>
                     <textarea
                         placeholder="Message"
@@ -90,6 +101,7 @@ export default function ContactUs() {
                         rows="4"
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                        required
                     ></textarea>
 
                     <div className='button-contactUs'>
@@ -108,5 +120,5 @@ export default function ContactUs() {
                 </div>
             </div>
         </div>
-    )
+    );
 }
