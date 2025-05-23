@@ -1,203 +1,106 @@
-/* Parent container for alignment */
-.info-container {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    color: rgb(0, 0, 0);
-    position: relative;
-    width: 85%;
-    margin: auto;
-    box-sizing: border-box;
-    overflow: hidden;
-}
-
-/* Home gallery container */
-.home-gallery {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50%;
-    padding-top: 10px;
-    margin-left: 0;
-    margin-right: 0;
+/* === Home wrapper === */
+.home {
+    width: 100%;
     box-sizing: border-box;
 }
 
-/* Welcome container */
-.welcome-container {
-    background-color: #f0f0f0;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    width: 50%;
-    height: 50%;
-    margin-top: 20px;
+/* === Banner stays full width === */
+.banner {
+    width: 100%;
+    display: block;
     box-sizing: border-box;
-    position: relative;
-
 }
 
-.welcome-heading {
-    font-size: 1rem;
-    margin-bottom: 10px;
-    color: #333;
-    padding: 0;
-    font-weight: bold;
+/* === Layout below the banner === */
+.home-info {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem 1rem;
+    box-sizing: border-box;
 }
 
-
-/* Moving Text */
+/* === Marquee style === */
 .moving-text {
     width: 100%;
     overflow: hidden;
     white-space: nowrap;
-    /* Prevent text from wrapping */
-    box-sizing: border-box;
     animation: moveText 50s linear infinite;
-    /* Animation for moving text */
     color: rgb(22, 19, 19);
     font-weight: bold;
-    z-index: 1;
-    position: relative;
-    margin-top: 0.5rem;
-    /* Ensure it stays within the container */
+    margin-bottom: 1rem;
+    text-align: center;
 }
 
-/* Example animation (moving the text from right to left) */
+/* === Text + Gallery layout === */
+.info-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* === Welcome text === */
+.welcome-text {
+    flex: 1;
+    background-color: #e0ddcc;
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.welcome-text-1 {
+    flex: 1;
+    background-color: #000000;
+    border-radius: 16px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+/* === Heading inside welcome box === */
+.welcome-heading {
+    font-size: 1.5rem;
+    background-color: #51a5bd;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 12px 12px 0 0;
+    margin: -1.5rem -1.5rem 1rem -1.5rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.welcome-heading-1 {
+    font-size: 1.5rem;
+    background-color: #51a5bd;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 12px 12px 0 0;
+    font-weight: 600;
+    text-align: center;
+}
+
+
+/* === Gallery on the right === */
+.gallery-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    background-size: cover;
+
+}
+
+
+/* === Text animation === */
 @keyframes moveText {
     0% {
         transform: translateX(100%);
-        /* Start from the right */
     }
 
     100% {
         transform: translateX(-100%);
-        /* Move to the left */
     }
-}
-
-
-/* Media Queries for Mobile */
-@media (min-width:375px) and (max-width: 470px) {
-
-    body,
-    html {
-        margin: 0;
-        font-size: 14px;
-        overflow-x: hidden;
-        overflow-y: scroll;
-        height: auto;
-    }
-
-
-    /* Info container with adjusted gap and width */
-    .info-container {
-        display: flex;
-        flex-direction: column;
-        /* Stack elements vertically */
-        align-items: center;
-        width: 100%;
-        gap: 10px;
-        /* Adjust gap for mobile */
-        padding: 10px;
-        /* Add padding */
-        box-sizing: border-box;
-    }
-
-
-
-    /* Adjust home gallery for mobile screens */
-    .home-gallery {
-        width: 80%;
-        /* Adjust width */
-        padding-top: 15px;
-    }
-
-
-    /* Parent container for alignment */
-    .info-container {
-        display: flex;
-        justify-content: center;
-        gap: 1rem;
-        color: rgb(0, 0, 0);
-        position: relative;
-        width: 85%;
-        margin: auto;
-        box-sizing: border-box;
-        overflow: hidden;
-    }
-
-    /* Home gallery container */
-    .home-gallery {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 50%;
-        padding-top: 10px;
-        margin-left: 0;
-        margin-right: 0;
-        box-sizing: border-box;
-    }
-
-    /* Welcome container */
-    .welcome-container {
-        background-color: #f0f0f0;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        padding: 20px;
-        width: 50%;
-        height: 50%;
-        margin-top: 20px;
-        box-sizing: border-box;
-    }
-
-    .welcome-heading {
-        font-size: 1rem;
-        margin-bottom: 10px;
-        color: #333;
-        padding: 0;
-        font-weight: bold;
-    }
-
-    .home-info {
-        width: 100%;
-        overflow: hidden;
-        white-space: nowrap;
-        position: relative;
-    }
-
-    .welcome-text,
-    .welcome-text1 {
-        white-space: wrap;
-    }
-
-    /* Moving Text */
-    .moving-text {
-        width: 170%;
-        white-space: nowrap;
-        /* Prevent text from wrapping */
-        box-sizing: border-box;
-        animation: moveText 10s linear infinite;
-        /* Animation for moving text */
-        color: rgb(22, 19, 19);
-        font-weight: bold;
-        z-index: 1;
-        position: relative;
-        margin-top: 0.5rem;
-        /* Ensure it stays within the container */
-    }
-
-    /* Example animation (moving the text from right to left) */
-    @keyframes moveText {
-        0% {
-            transform: translateX(100%);
-            /* Start from the right */
-        }
-
-        100% {
-            transform: translateX(-100%);
-            /* Move to the left */
-        }
-    }
-
 }

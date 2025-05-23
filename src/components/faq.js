@@ -15,7 +15,11 @@ export default function Faq() {
                 <div className="faq-item">
                     <h3>What is the best time to visit Bhutan?</h3>
                     <div >The best time to visit Bhutan is during the spring
-                        (March to May) and autumn (September to November) seasons when the weather is pleasant and the landscapes are stunning.</div>
+                        (March to May) and autumn (September to November) seasons when the weather is pleasant and the landscapes are stunning.
+                        But other seasons have their own charm too. <br /> Winter (December to February) is
+                        cold but offers clear skies and beautiful views of the Himalayas, while summer (June to August) is the monsoon season, which can be wet but also lush and green.
+                    </div>
+
                 </div>
                 <div className="faq-item">
                     <h3>Do I need a visa to visit Bhutan?</h3>
@@ -25,7 +29,7 @@ export default function Faq() {
                 <div className="faq-item">
                     <h3>What currency is used in Bhutan?</h3>
                     <div > The currency used in Bhutan is the Ngultrum (BTN), which is pegged to
-                        the Indian Rupee (INR). <br /> USD, AUD and most major currencies are accepted for exdchange in Bhutanese bannks.</div>
+                        the Indian Rupee (INR). <br /> USD, AUD and most major currencies are accepted for exchange in Bhutanese banks.</div>
                 </div>
                 <div className="faq-item">
                     <h3>Is it safe to travel in Bhutan?</h3>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './HomeGallery.css'; // Your CSS file
+import './HomeGallery.css';
 
 const HomeGallery = () => {
     const images = [
@@ -22,24 +22,29 @@ const HomeGallery = () => {
 
     return (
         <div className="home-gallery">
-            <h2 className="gallery-title">Sneak Peek at Bhutan</h2>
             <div className="image-container">
-
                 <img
+                    key={currentImageIndex}
                     src={images[currentImageIndex]}
-                    alt={`Gallery${currentImageIndex + 1}`}
-                    className="gallery-image"
+                    alt={`Gallery ${currentImageIndex + 1}`}
+                    className="gallery-image zoom-animation"
                 />
+
+                <div className="gallery-controls">
+                    <button className="prev-btn" onClick={prevImage}>
+                        &#8592;
+                    </button>
+                    <button className="next-btn" onClick={nextImage}>
+                        &#8594;
+                    </button>
+                </div>
+
+                <div className="image-index">
+                    {currentImageIndex + 1} / {images.length}
+                </div>
             </div>
 
-            <div className="gallery-controls">
-                <button className="prev-btn" onClick={prevImage}>
-                    &#8592;
-                </button>
-                <button className="next-btn" onClick={nextImage}>
-                    &#8594;
-                </button>
-            </div>
+
         </div>
     );
 };

@@ -1,6 +1,6 @@
 import './Home.css';
 import './contactUs.css';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import Banner from './Banner';
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
@@ -63,6 +63,11 @@ export default function ContactUs() {
             <div className='contactUs'>
                 <form onSubmit={handleSubmit}>
                     <h1 className="heading1">Contact Us</h1>
+                    <div>
+                        Have a quick question? Feel free to use this form. <br />
+                        For a trip estimate, please visit the <Link to="/tripplanner">Trip Planner</Link> section under the Booking tab. <br />  <br />
+                    </div>
+
 
                     <label>Your Name</label>
                     <input

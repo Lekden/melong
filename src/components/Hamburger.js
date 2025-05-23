@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { CgMenuGridO } from "react-icons/cg";
+import { Link } from "react-router-dom";
 import "./Hamburger.css";
 
 export default function Hamburger() {
@@ -8,62 +9,68 @@ export default function Hamburger() {
 
   const toggleMenu = () => setIsOpen(!isOpen);
   const toggleSubmenu = (submenu) => {
-    setActiveSubmenu((prev) => (prev === submenu ? null : submenu));
+    setActiveSubmenu((prev) => (prev === submenu ? "" : submenu));
   };
+
+
+  const menuItems = [
+    {
+      name: "Services",
+      submenu: [
+        { label: "Trek", path: "/treks" },
+        { label: "Guided Tour", path: "/guided-tour" },
+        { label: "Travel Packages", path: "/travel-packages" },
+        { label: "Festival Guide", path: "/festival-guide" },
+      ],
+    },
+    {
+      name: "Booking",
+      submenu: [
+        { label: "Manage Booking", path: "/manage-booking" },
+        { label: "Booking Inquiries", path: "/booking-inquiries" },
+      ],
+    },
+    {
+      name: "Landmarks",
+      submenu: [
+        { label: "Taksang", path: "/landmarks/taksang" },
+        { label: "Jumolhari", path: "/landmarks/jumolhari" },
+      ],
+    },
+  ];
 
   return (
     <div className="mobile-menu">
       <button
         onClick={toggleMenu}
-        style={{ color: "black", border: "none", background: "transparent" }}
+        style={{ border: "none", background: "transparent" }}
+        aria-label="Toggle Menu"
       >
         <CgMenuGridO size={50} />
       </button>
+
       {isOpen && (
         <div className="dropdown-mobile">
-          <div className="dropdown-block">
-            <button
-              className="dropdown-options"
-              onClick={() => toggleSubmenu("services")}
-            >
-              Services
-            </button>
-            {activeSubmenu === "services" && (
-              <div className="submenu">
-                <div href="#">Guided Tour</div>
-                <div href="#">Travel Packages</div>
-                <div href="#">Festival Guide</div>
-              </div>
-            )}
-          </div>
-          <div className="dropdown-block">
-            <button
-              className="dropdown-options"
-              onClick={() => toggleSubmenu("bookings")}
-            >
-              Booking
-            </button>
-            {activeSubmenu === "bookings" && (
-              <div className="submenu">
-                <div>Manage Booking</div>
-                <div>Booking Inquiries</div>
-              </div>
-            )}
-          </div>
-          <div className="dropdown-blocks">
-            <button
-              className="dropdown-options"
-              onClick={() => toggleSubmenu("landmarks")}
-            >
-              Landmarks
-            </button>
-            {activeSubmenu === "landmarks" && (
-              <div className="submenu">
-                <div>Taksang</div>
-                <div>Jumolhari</div>
-              </div>
-            )}
-          </div>
+          {menuItems.map(({ name, submenu }) => (
+            <div className="dropdown-block" key={name}>
+              <button
+                className="dropdown-options"
+                onClick={() => toggleSubmenu(name.toLowerCase())}
+                aria-expanded={activeSubmenu === name.toLowerCase()}
+              >
+                {name}
+              </button>
+              {activeSubmenu === name.toLowerCase() && (
+                <div className="submenu">
+                  {submenu.map(({ label, path }) => (
+                    <Link to={path} key={label} onClick={() => setIsOpen(false)}>
+                      <div>{label}</div>
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
         </div>
       )}
     </div>

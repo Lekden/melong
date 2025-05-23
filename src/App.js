@@ -5,6 +5,7 @@ import Faq from './components/faq';
 import ContactUs from './components/contactUs';
 import Treks from './components/Treks';
 import Knowus from './components/Knowus';
+import Tripplanner from './components/tripPlanner';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/contactUs" element={<ContactUs />} />
           <Route path="/treks" element={<Treks />} />
           <Route path="/knowus" element={<Knowus />} />
+          <Route path="/tripplanner" element={<Tripplanner />} />
         </Routes>
       </div>
     </Router>

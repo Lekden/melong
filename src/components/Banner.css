@@ -1,108 +1,135 @@
 .wrapper {
     width: 100%;
-    /* Adjust the width to make it narrower */
     max-width: 100%;
-    /* Optional: set a maximum width for the container */
 }
-
 
 .banner {
     display: flex;
-    justify-content: space-between;
-    /* Space between logo, text, and tabs */
+    justify-content: space-evenly;
     align-items: center;
-    height: 13vh;
-    color: rgb(0, 0, 0);
+    height: 11vh;
     padding: 0 20px;
     position: relative;
     width: 100%;
     overflow-x: hidden;
+    /* background: linear-gradient(270deg, #fcfcfc, #c82c01, #4fe067, #e2ec76); */
+    /* background: linear-gradient(270deg, #7fadc9, rgb(213, 216, 217)); */
+
 
 }
 
+/* 
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+} */
+
 .banner-content {
     display: flex;
-    justify-content: space-between;
-    /* space hamburger and tabs */
+    flex-direction: row;
+    justify-content: space-evenly;
     align-items: center;
-    width: 100%;
-    position: relative;
+    flex-wrap: wrap;
+    width: 70%;
+
+
 }
 
 .hamburger {
     display: none;
 }
 
-/* Banner image (logo on the left) */
-.banner-image {
-    background-image: url("/src/components/images/banner.jpg");
-    background-size: auto 99%;
-    background-position: center;
-    width: 7%;
-    height: 80%;
-    border-radius: 8px;
-    z-index: 2;
-}
 
-.banner-background {
+/* .banner-background {
     position: absolute;
-    width: 100%;
-    /* Small patch size */
-    height: 100%;
-    right: 1%;
-    background-size: cover;
-    background-image: url("/src/components/images/taksang.jpg");
-    background-position: center;
-    border-radius: 8px;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background-image: url("/src/components/images/buddhapoint.jpg");
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: auto auto;
     opacity: 0.6;
-    filter: grayscale(60%) contrast(60%) brightness(1.3);
-    /* Under the title if needed */
+    filter: grayscale(30%) contrast(90%) brightness(1.5);
     pointer-events: none;
-    /* Allow clicks to go through */
-}
+} */
 
 .headingmobile {
     display: none;
 }
 
-.heading {
-    margin: 0;
-    padding: 0 5px;
-    font-size: 2.5rem;
-    color: rgb(12, 15, 13);
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    height: 100%;
+    /* Ensures the image inside gets height in % */
 }
 
 
+.banner-image {
+    background-image: url("/src/components/images/logmelongblack.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 85px;
+    height: 79%;
+    border-radius: 8px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background-clip: padding-box;
+    padding: 0.2rem;
+}
+
+
+/* Wrap heading and subheading */
+.text-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.heading {
+    margin: 0;
+    padding: 0;
+    font-size: 1.5rem;
+    color: rgb(11, 7, 16);
+    text-decoration: wavy;
+}
 
 .subheading {
     margin: 0;
     padding: 0;
-    font-size: 1.2rem;
-    color: rgb(0, 0, 0);
+    font-size: 1rem;
+    color: rgb(60, 60, 60);
+
 }
 
-
-
-/* Tabs (Buttons) container */
 .tabs {
     position: absolute;
-    /* Positioning tabs at the top-right corner */
     top: 10px;
-    right: 1%;
+    right: 1px;
     display: flex;
     gap: 5px;
     padding: 2px;
-
-    /* Space between the tabs */
+    margin: 0 0 0 0;
 }
 
 .tabs :hover {
     cursor: pointer;
-    background: #000;
-    /* Change cursor to pointer on hover */
+    background: #a2ddc5;
 }
 
-/* Overlay for the text content */
 .overlay {
     text-align: center;
     position: absolute;
@@ -130,7 +157,6 @@
     justify-content: center;
     align-items: center;
     border: none;
-
     font-size: 1rem;
     color: rgb(0, 0, 0);
     border-radius: 5px;
@@ -138,37 +164,18 @@
     margin-left: 5px;
 }
 
-.tabs :hover {
-
-    cursor: pointer;
-    background: #326088;
-    color: white;
-    /* Change cursor to pointer on hover */
-}
-
-.button:hover {
-    cursor: pointer;
-    background-color: #326088;
-    color: white;
-    /* Change cursor to pointer on hover */
-}
-
-/* Navigation Bar */
 .navigation {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 4vh;
+    height: 3.5vh;
     padding: 0 20px;
-    background-color: #272525;
+    background-color: rgb(48, 125, 59);
     gap: 20px;
     z-index: 10;
-
 }
 
-
-/* Dropdown Container */
 .dropdown-container {
     display: flex;
     justify-content: center;
@@ -178,42 +185,36 @@
     gap: 25px;
     box-sizing: border-box;
     z-index: 30;
-    /* Space between each dropdown */
+
 }
 
-/* Dropdown items */
 .dropdown {
     display: inline-block;
     height: 100%;
     align-items: center;
     white-space: wrap;
-    /* Ensures each dropdown behaves like an inline element */
 }
 
-
-/* Button for each dropdown */
 .dropdown-btn {
     display: inline-block;
     position: relative;
     align-items: center;
     justify-content: center;
+    white-space: nowrap;
     right: 50px;
-    background-color: #272525;
-    color: white;
+    background-color: transparent;
+    color: rgb(255, 255, 255);
     border: none;
     width: 120px;
     height: 4vh;
     cursor: pointer;
     border-radius: 5px;
     font-size: 15px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-family: inherit;
 }
 
-/* Style for dropdown content (hidden by default) */
 .dropdown-content {
     display: none;
-    /* Hidden by default */
     position: absolute;
     background-color: #f9f9f9;
     min-width: 160px;
@@ -221,22 +222,19 @@
     z-index: 1;
     border-radius: 5px;
     z-index: 20;
-
 }
 
 .dropdown:hover .dropdown-content {
     display: block;
 }
 
-/* Style links inside the dropdown */
 .dropdown-content a {
     color: black;
-    padding: 12px 16px;
+    padding: 5px 16px;
     text-decoration: none;
     display: block;
 }
 
-/* Change color when hovering over links */
 .dropdown-content a:hover {
     background-color: #6f6a6a;
     color: white;
@@ -245,7 +243,6 @@
 .home-icon {
     z-index: 3;
     color: black;
-    /* no quotes */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -254,7 +251,22 @@
     border-radius: 3px;
 }
 
-/* Media Queries for Mobile */
+.mobile-tabs {
+
+    display: none;
+}
+
+@media (max-width: 950px) {
+    .heading {
+        display: none
+    }
+
+    .subheading {
+        display: none;
+    }
+}
+
+
 @media (min-width:375px) and (max-width: 775px) {
 
     body,
@@ -263,122 +275,72 @@
         font-size: 14px;
         overflow-x: hidden;
         overflow-y: scroll;
-
     }
 
     .banner-image {
         display: none;
     }
 
-
-    /* Heading styles */
-    .heading {
-        display: none;
-
+    .mobile-tabs {
+        position: absolute;
+        top: 10px;
+        right: 1%;
+        display: flex;
+        gap: 5px;
+        padding: 2px;
+        margin: 0 60px 0 0;
     }
 
+    .heading {
+        display: none;
+    }
 
-    /* Subheading styles */
     .subheading {
         display: none;
     }
 
-    /* Button Styles */
     .button {
         width: 90px;
         font-size: 0.7rem;
         height: 30px;
         margin-top: 8px;
-        /* Add more space around buttons */
-    }
-
-    .home-icon {
-        z-index: 3;
-        color: black;
-        /* no quotes */
-        display: flex;
-        text-align: center;
-        text-decoration: none;
-        flex-direction: column;
-        align-items: center;
-
-        border-radius: 3px;
-        padding: 5px;
     }
 
     .nav-button {
         font-size: 0.9rem;
-        /* Adjust font size */
         margin-top: 5px;
     }
 
-    .button:hover {
-        background-color: #326088;
-        color: white;
-    }
-
-    /* Info container with adjusted gap and width */
     .info-container {
         display: flex;
         flex-direction: column;
-        /* Stack elements vertically */
         align-items: center;
         width: 100%;
         gap: 10px;
-        /* Adjust gap for mobile */
         padding: 10px;
-        /* Add padding */
         box-sizing: border-box;
     }
 
-    /* Adjust home gallery for mobile screens */
     .home-gallery {
         width: 80%;
-        /* Adjust width */
         padding-top: 15px;
     }
 
-    /* Welcome container styles */
     .welcome-container {
         width: 100%;
-        /* Make it take full width on mobile */
         height: auto;
-        /* Let it grow based on content */
         margin-top: 15px;
         padding: 15px;
-        /* Add padding for better readability */
         box-sizing: border-box;
         overflow-x: hidden;
     }
 
-    .banner-background {
-        position: absolute;
-        width: 100%;
-        /* Small patch size */
-        height: 100%;
-        right: 1%;
-        background-size: cover;
-        background-image: url("/src/components/images/taksang.jpg");
-        background-position: center;
-        border-radius: 8px;
-        opacity: 0.4;
-        /* Under the title if needed */
-        pointer-events: none;
-        /* Allow clicks to go through */
-    }
-
-    /* Welcome heading font size */
     .welcome-heading {
-
         font-size: 0.5;
         margin-bottom: 5px;
     }
 
-    /* Dropdown Container */
-    .dropdown-container {
-        display: none;
-    }
-
+    .dropdown-container,
     .dropdown {
         display: none;
     }
@@ -387,66 +349,33 @@
         width: 100%;
         max-width: 100%;
         overflow-x: hidden;
-
     }
 
-    .button {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #242222;
-        border: none;
-        height: 35px;
-        width: 110px;
-        font-size: 0.8rem;
-        color: white;
-        border-radius: 5px;
-        margin-top: 1px;
-    }
-
-    .nav-button {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: none;
-        font-size: 1rem;
-        color: rgb(0, 0, 0);
-        border-radius: 5px;
-        margin-top: 1px;
-        margin-left: 5px;
-    }
-
-    /* Tabs (Buttons) container */
     .banner-content {
         display: flex;
         justify-content: space-between;
-        /* space hamburger and tabs */
         align-items: center;
     }
+
 
     .hamburger {
         display: block;
         order: 0;
-        /* Appears first */
         position: relative;
         right: 6%;
-
     }
 
     .tabs {
-        order: 1;
-        /* Appears last */
-        display: flex;
-        padding-right: 25px;
+
+        display: none;
+
     }
 
     .headingmobile {
         text-align: center;
         display: block;
         margin: 0;
-        /* Remove all default margin */
         padding: 0.5rem 0;
-        /* Optional: Add controlled spacing if needed */
         font-size: 1.5rem;
         background: black;
         color: white;
@@ -455,7 +384,4 @@
     .navigation {
         display: none;
     }
-
-
-
 }
