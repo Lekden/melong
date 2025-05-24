@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/melong/static/css/main.df169513.css",
-    "main.js": "/melong/static/js/main.16be7200.js",
+    "main.css": "/melong/static/css/main.3d995b2e.css",
+    "main.js": "/melong/static/js/main.7c122eaf.js",
     "static/js/453.419a5d54.chunk.js": "/melong/static/js/453.419a5d54.chunk.js",
     "static/media/logmelongblack.png": "/melong/static/media/logmelongblack.f0c0151408f39f821f01.png",
     "index.html": "/melong/index.html",
-    "main.df169513.css.map": "/melong/static/css/main.df169513.css.map",
-    "main.16be7200.js.map": "/melong/static/js/main.16be7200.js.map",
+    "main.3d995b2e.css.map": "/melong/static/css/main.3d995b2e.css.map",
+    "main.7c122eaf.js.map": "/melong/static/js/main.7c122eaf.js.map",
     "453.419a5d54.chunk.js.map": "/melong/static/js/453.419a5d54.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.df169513.css",
-    "static/js/main.16be7200.js"
+    "static/css/main.3d995b2e.css",
+    "static/js/main.7c122eaf.js"
   ]
 }
