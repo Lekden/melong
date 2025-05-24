@@ -47,12 +47,21 @@ export default function Banner() {
                             <Link className="home-icon" to="/knowus">
                                 <span className="icon-label">Know us</span>
                             </Link>
-                            <Link className="home-icon" to="/contactus">
-                                <span className="icon-label">Contact us</span>
+                            <Link
+                                className="home-icon"
+                                to="/contactus"
+                                style={{ color: '#13f031' }} >
+                                <span
+                                    className="icon-label"
+                                >Contact us</span>
                             </Link>
                             <Link className="home-icon" to="/faq">
                                 <span className="icon-label">FAQ</span>
                             </Link>
+                        </div>
+                        <div onClick={() => navigate('/tripplanner')}
+                            className="trip-planner-button">
+                            <strong>Plan your trip with us</strong>
                         </div>
 
                         <div className="mobile-tabs">
@@ -95,22 +104,16 @@ export default function Banner() {
                         </div>
 
                         <div className="dropdown">
-                            <button className="dropdown-btn">Landmarks<span style={{ fontSize: '12px' }}>▼</span></button>
+                            <button className="dropdown-btn">Landmarks <span style={{ fontSize: '12px' }}>▼</span></button>
                             <div className="dropdown-content">
                                 <Link href="#">Taksang</Link>
                                 <Link href="#">Jumolhari</Link>
                                 <Link href="#">Paro Rinpung</Link>
                             </div>
                         </div>
-                        <div className="dropdown">
-                            <button className="dropdown-btn">Trip Planner <span style={{ fontSize: '12px' }}>▼</span></button>
-                            <div className="dropdown-content">
-                                <Link to="/tripplanner">Plan your Trip</Link>
 
-                            </div>
-                        </div>
                         <div className="dropdown">
-                            <button className="dropdown-btn">Holiday Checklist<span style={{ fontSize: '12px' }}>▼</span></button>
+                            <button className="dropdown-btn">Holiday Checklist <span style={{ fontSize: '12px' }}>▼</span></button>
                             <div className="dropdown-content">
                                 <Link href="#">Pre Departure Guide</Link>
                             </div>

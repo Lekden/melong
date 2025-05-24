@@ -14,10 +14,71 @@
 /* === Layout below the banner === */
 .home-info {
     width: 100%;
-    max-width: 1400px;
+    max-width: 1500px;
     margin: 0 auto;
-    padding: 1rem 1rem;
+    padding: 1rem;
     box-sizing: border-box;
+}
+
+/* === Text + Gallery layout === */
+.info-container {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allow wrapping on zoom/small screens */
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* === Welcome text === */
+.welcome-text,
+.welcome-text-1 {
+    background-color: transparent;
+    padding: 1.5rem;
+    border-radius: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.welcome-text {
+    flex: 1 1 300px;
+    min-width: 300px;
+}
+
+.welcome-text-1 {
+    flex: 1 1 500px;
+    min-width: 500px;
+}
+
+/* === Heading inside welcome box === */
+.welcome-heading {
+    font-size: 1.5rem;
+    background-color: rgb(252, 252, 252);
+    color: #313189;
+    padding: 0.5rem 2rem;
+    border-radius: 8px 8px 0 0;
+    margin: -1.5rem -1.5rem 1rem -1.5rem;
+    font-weight: 600;
+    text-align: left;
+}
+
+.welcome-heading-1 {
+    font-size: 1.5rem;
+    background: linear-gradient(135deg, #e4ea33, #eb8332);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 6px 6px 0 0;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* === Gallery on the right === */
+.gallery-container {
+    flex: 1 1 300px;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+    background-size: cover;
 }
 
 /* === Marquee style === */
@@ -32,68 +93,6 @@
     text-align: center;
 }
 
-/* === Text + Gallery layout === */
-.info-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-/* === Welcome text === */
-.welcome-text {
-    flex: 1;
-    background-color: #e0ddcc;
-    padding: 1.5rem;
-    border-radius: 16px;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
-}
-
-.welcome-text-1 {
-    flex: 1;
-    background-color: #000000;
-    border-radius: 16px;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-
-/* === Heading inside welcome box === */
-.welcome-heading {
-    font-size: 1.5rem;
-    background-color: #51a5bd;
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 12px 12px 0 0;
-    margin: -1.5rem -1.5rem 1rem -1.5rem;
-    font-weight: 600;
-    text-align: center;
-}
-
-.welcome-heading-1 {
-    font-size: 1.5rem;
-    background-color: #51a5bd;
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 12px 12px 0 0;
-    font-weight: 600;
-    text-align: center;
-}
-
-
-/* === Gallery on the right === */
-.gallery-container {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    background-size: cover;
-
-}
-
-
 /* === Text animation === */
 @keyframes moveText {
     0% {
@@ -102,5 +101,74 @@
 
     100% {
         transform: translateX(-100%);
+    }
+}
+
+.welcome-text-inner {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    padding: 0.5rem;
+    box-sizing: border-box;
+}
+
+.inner-widget-base {
+    flex: 1 1 240px;
+    min-width: 240px;
+    max-width: 100%;
+    height: auto;
+    padding: 1rem;
+    box-sizing: border-box;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.inner-widget {
+    background-color: rgb(136, 99, 159);
+    color: white;
+    margin-bottom: 4%;
+}
+
+.inner-widget-1 {
+    background-color: rgb(72, 189, 91);
+    color: black;
+    margin-top: 4%;
+    margin-left: -3%;
+}
+
+
+
+.inner-widget:hover,
+.inner-widget-1:hover,
+.inner-widget-2:hover,
+.inner-widget-3:hover {
+    box-shadow: 0 6px 16px #0000004d;
+    transition: all 0.3s ease;
+    background-color: rgb(218, 141, 87);
+    color: black;
+}
+
+/* === Responsive Fixes for Zoom/Small Screens === */
+@media (max-width: 768px) {
+    .info-container {
+        flex-direction: column;
+    }
+
+    .welcome-text,
+    .welcome-text-1,
+    .gallery-container {
+        width: 100%;
+        flex: 1 1 100%;
+    }
+
+    .welcome-text-inner {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .inner-widget-base {
+        width: 100%;
     }
 }

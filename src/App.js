@@ -6,6 +6,7 @@ import ContactUs from './components/contactUs';
 import Treks from './components/Treks';
 import Knowus from './components/Knowus';
 import Tripplanner from './components/tripPlanner';
+import LandmarkTeaser from './components/LandmarkTeaser';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/treks" element={<Treks />} />
           <Route path="/knowus" element={<Knowus />} />
           <Route path="/tripplanner" element={<Tripplanner />} />
+          <Route path="/landmarkteaser" element={<LandmarkTeaser />} />
         </Routes>
       </div>
     </Router>

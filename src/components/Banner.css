@@ -1,6 +1,8 @@
+/* ========== Base Layout ========== */
 .wrapper {
     width: 100%;
     max-width: 100%;
+    overflow-x: hidden;
 }
 
 .banner {
@@ -12,26 +14,8 @@
     position: relative;
     width: 100%;
     overflow-x: hidden;
-    /* background: linear-gradient(270deg, #fcfcfc, #c82c01, #4fe067, #e2ec76); */
-    /* background: linear-gradient(270deg, #7fadc9, rgb(213, 216, 217)); */
-
-
+    background: black;
 }
-
-/* 
-@keyframes gradientAnimation {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
-} */
 
 .banner-content {
     display: flex;
@@ -40,31 +24,10 @@
     align-items: center;
     flex-wrap: wrap;
     width: 70%;
-
-
+    flex-shrink: 0;
 }
 
 .hamburger {
-    display: none;
-}
-
-
-/* .banner-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 200px;
-    background-image: url("/src/components/images/buddhapoint.jpg");
-    background-position: left center;
-    background-repeat: no-repeat;
-    background-size: auto auto;
-    opacity: 0.6;
-    filter: grayscale(30%) contrast(90%) brightness(1.5);
-    pointer-events: none;
-} */
-
-.headingmobile {
     display: none;
 }
 
@@ -73,9 +36,8 @@
     align-items: center;
     gap: 5px;
     height: 100%;
-    /* Ensures the image inside gets height in % */
+    flex: 0 0 auto;
 }
-
 
 .banner-image {
     background-image: url("/src/components/images/logmelongblack.png");
@@ -89,10 +51,10 @@
     flex-shrink: 0;
     background-clip: padding-box;
     padding: 0.2rem;
+    filter: contrast(90%) brightness(3.0);
+    object-fit: contain;
 }
 
-
-/* Wrap heading and subheading */
 .text-block {
     display: flex;
     flex-direction: column;
@@ -103,7 +65,7 @@
     margin: 0;
     padding: 0;
     font-size: 1.5rem;
-    color: rgb(11, 7, 16);
+    color: rgb(249, 249, 249);
     text-decoration: wavy;
 }
 
@@ -111,8 +73,7 @@
     margin: 0;
     padding: 0;
     font-size: 1rem;
-    color: rgb(60, 60, 60);
-
+    color: rgb(255, 255, 255);
 }
 
 .tabs {
@@ -122,12 +83,12 @@
     display: flex;
     gap: 5px;
     padding: 2px;
-    margin: 0 0 0 0;
 }
 
 .tabs :hover {
     cursor: pointer;
     background: #a2ddc5;
+    color: black;
 }
 
 .overlay {
@@ -171,9 +132,13 @@
     width: 100%;
     height: 3.5vh;
     padding: 0 20px;
-    background-color: rgb(48, 125, 59);
+    background-color: rgb(101, 136, 202);
     gap: 20px;
     z-index: 10;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
 }
 
 .dropdown-container {
@@ -185,7 +150,6 @@
     gap: 25px;
     box-sizing: border-box;
     z-index: 30;
-
 }
 
 .dropdown {
@@ -219,9 +183,8 @@
     background-color: #f9f9f9;
     min-width: 160px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    border-radius: 5px;
     z-index: 20;
+    border-radius: 5px;
 }
 
 .dropdown:hover .dropdown-content {
@@ -242,7 +205,7 @@
 
 .home-icon {
     z-index: 3;
-    color: black;
+    color: rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -252,22 +215,43 @@
 }
 
 .mobile-tabs {
-
     display: none;
 }
 
-@media (max-width: 950px) {
-    .heading {
-        display: none
-    }
+.trip-planner-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    padding: 0.5rem 1rem;
+    box-sizing: border-box;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    border-radius: 8px;
+    background-color: rgb(72, 189, 91);
+    color: black;
+    margin-top: 2.5rem;
+    white-space: normal;
+    flex-wrap: wrap;
+    text-align: center;
+    line-height: 0.7;
 
+}
+
+.headingmobile {
+    display: none;
+}
+
+/* ===== Media Queries ===== */
+@media (max-width: 950px) {
+
+    .heading,
     .subheading {
         display: none;
     }
 }
 
-
-@media (min-width:375px) and (max-width: 775px) {
+@media (min-width: 375px) and (max-width: 775px) {
 
     body,
     html {
@@ -291,10 +275,7 @@
         margin: 0 60px 0 0;
     }
 
-    .heading {
-        display: none;
-    }
-
+    .heading,
     .subheading {
         display: none;
     }
@@ -357,7 +338,6 @@
         align-items: center;
     }
 
-
     .hamburger {
         display: block;
         order: 0;
@@ -366,9 +346,7 @@
     }
 
     .tabs {
-
         display: none;
-
     }
 
     .headingmobile {

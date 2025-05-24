@@ -65,7 +65,7 @@ export default function ContactUs() {
                     <h1 className="heading1">Contact Us</h1>
                     <div>
                         Have a quick question? Feel free to use this form. <br />
-                        For a trip estimate, please visit the <Link to="/tripplanner">Trip Planner</Link> section under the Booking tab. <br />  <br />
+                        For a trip estimate, please visit the <Link to="/tripplanner" style={{ color: 'rgb(40, 71, 157)' }}>Trip Planner</Link> section under the Booking tab. <br />  <br />
                     </div>
 
 

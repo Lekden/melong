@@ -19,6 +19,7 @@ html {
     background-color: #d3d1d1;
     /* Adds spacing between the child elements */
     border-radius: 8px;
+    color: black;
 }
 
 .contactUs form {
