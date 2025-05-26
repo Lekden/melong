@@ -1,27 +1,21 @@
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import "./Banner.css";
 import { AiFillHome } from "react-icons/ai";
-import { FaQuestion } from "react-icons/fa6";
-import { MdContactMail } from "react-icons/md";
-import { FaPeoplePulling } from "react-icons/fa6";
-import Hamburger from "./Hamburger";
-import { MdRateReview } from "react-icons/md";
+import { FaQuestion, FaPeoplePulling } from "react-icons/fa6";
+import { MdContactMail, MdRateReview } from "react-icons/md";
 import { BiSolidPhoneCall } from "react-icons/bi";
-
-
+import Hamburger from "./Hamburger";
 
 export default function Banner() {
-    console.log("Home component rendered");
     const navigate = useNavigate();
     const location = useLocation();
 
-
     return (
         <>
-            <h1 className="headingmobile">Melong Tours & Treks</h1>
             <div className="wrapper">
                 <div className="banner">
-                    <div className="banner-background"></div>
+
+                    {/* <div className="banner-background"></div> */}
                     <div className="hamburger">
                         <Hamburger />
                     </div>
@@ -34,48 +28,61 @@ export default function Banner() {
                             </div>
                         </div>
 
-                        <div className="tabs">
-                            {location.pathname !== "/" && (
-                                <Link className="home-icon" to="/">
-                                    <span className="icon-label" >To Home</span>
-                                </Link>
-                            )}
+                        <div className="dropdown-container">
+                            <div className="dropdown">
+                                <button className="dropdown-btn">Services <span className="arrow">&#9662;</span></button>
+                                <div className="dropdown-content">
+                                    <Link to="/treks">Trek</Link>
+                                    <Link to="#">Hotel & Logistics</Link>
+                                    <Link to="#">Guide Service</Link>
+                                    <Link to="#">Hire Cars</Link>
+                                </div>
+                            </div>
 
-                            <Link className="home-icon" to="/knowus">
-                                <span className="icon-label"> Reviews</span>
-                            </Link>
-                            <Link className="home-icon" to="/knowus">
-                                <span className="icon-label">Know us</span>
-                            </Link>
-                            <Link
-                                className="home-icon"
-                                to="/contactus"
-                                style={{ color: '#13f031' }} >
-                                <span
-                                    className="icon-label"
-                                >Contact us</span>
-                            </Link>
-                            <Link className="home-icon" to="/faq">
-                                <span className="icon-label">FAQ</span>
-                            </Link>
+                            <div className="dropdown">
+                                <button className="dropdown-btn">Placeholder <span className="arrow">&#9662;</span></button>
+                                <div className="dropdown-content">
+                                    <Link to="#">option1</Link>
+                                    <Link to="#">option2</Link>
+                                    <Link to="#">option3</Link>
+                                </div>
+                            </div>
+
+                            <div className="dropdown">
+                                <button className="dropdown-btn">Holiday Checklist <span className="arrow">&#9662;</span> </button>
+                                <div className="dropdown-content">
+                                    <Link to="#">Pre Departure Guide</Link>
+                                </div>
+                            </div>
                         </div>
-                        <div onClick={() => navigate('/tripplanner')}
-                            className="trip-planner-button">
-                            <strong>Plan your trip with us</strong>
+                        <div className="tabs-container">
+                            <div className="tabs">
+                                {location.pathname !== "/" && (
+                                    <Link className="home-icon" to="/">
+                                        <span className="icon-label">To Home</span>
+                                    </Link>
+                                )}
+                                <Link className="home-icon" to="/knowus">
+                                    <span className="icon-label">Know us</span>
+                                </Link>
+                                <Link className="home-icon contact-link" to="/contactus">
+                                    <span className="icon-label">Contact us</span>
+                                </Link>
+                                <Link className="home-icon" to="/faq">
+                                    <span className="icon-label">FAQ</span>
+                                </Link>
+                            </div>
+
                         </div>
 
                         <div className="mobile-tabs">
                             {location.pathname !== "/" && (
                                 <Link className="home-icon" to="/">
                                     <AiFillHome />
-                                    <span className="icon-label" >To Home</span>
+                                    <span className="icon-label">To Home</span>
                                 </Link>
                             )}
 
-                            <Link className="home-icon" to="/knowus">
-                                <MdRateReview />
-                                <span className="icon-label"> Reviews</span>
-                            </Link>
                             <Link className="home-icon" to="/knowus">
                                 <FaPeoplePulling />
                                 <span className="icon-label">Know us</span>
@@ -91,36 +98,16 @@ export default function Banner() {
                         </div>
                     </div>
                 </div>
-                <div className="navigation">
-                    <div className="dropdown-container">
-                        <div className="dropdown">
-                            <button className="dropdown-btn">Services <span style={{ fontSize: '12px' }}>▼</span> </button>
-                            <div className="dropdown-content">
-                                <Link to="/treks">Trek</Link>
-                                <Link href="#">Hotel & Logistics</Link>
-                                <Link href="#">Guide Service</Link>
-                                <Link href="#">Hire Cars</Link>
-                            </div>
-                        </div>
-
-                        <div className="dropdown">
-                            <button className="dropdown-btn">Landmarks <span style={{ fontSize: '12px' }}>▼</span></button>
-                            <div className="dropdown-content">
-                                <Link href="#">Taksang</Link>
-                                <Link href="#">Jumolhari</Link>
-                                <Link href="#">Paro Rinpung</Link>
-                            </div>
-                        </div>
-
-                        <div className="dropdown">
-                            <button className="dropdown-btn">Holiday Checklist <span style={{ fontSize: '12px' }}>▼</span></button>
-                            <div className="dropdown-content">
-                                <Link href="#">Pre Departure Guide</Link>
-                            </div>
-                        </div>
+                <div className="banner-bottom">
+                    <div className="moving-text">
+                        Your trusted guide to unforgettable adventures and heartfelt journeys.
+                        We are registered with the <strong>Tourism Council of Bhutan</strong> and <strong>ABTO (Association of Bhutanese Tour Operators)</strong>.
                     </div>
                 </div>
-            </div>
+
+
+
+            </div >
         </>
     );
 }

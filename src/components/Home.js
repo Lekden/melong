@@ -13,29 +13,29 @@ const Home = () => {
 
       <div className="home-info">
 
-
         <div className="info-container">
 
           <div className="welcome-text">
-            <div className="welcome-heading">Melong Tours & Treks</div>
+            <div className="welcome-heading">
+              Welcome to Melong Tours & Treks
+            </div>
 
+            <div className="welcome-subheading" style={{ color: '#272525' }}>
+              Your trusted guide to unforgettable adventures and heartfelt journeys.
+            </div>
 
-            <h2 className="welcome-text-inner">
-              Discover Bhutan’s beauty with Melong Tours & Treks — your trusted guide to unforgettable adventures and heartfelt journeys.
-            </h2>
-
-
+            <div> <br /></div>
             <div className="welcome-text-inner">
-              <div onClick={() => navigate('/knowus')} className="inner-widget-base inner-widget">
-                <strong>Festivals to Catch</strong> <br />
-                Celebrate the vibrant local culture you simply can’t miss!<br />
-                <span style={{ fontStyle: 'italic', fontSize: '1rem' }}>click to read more</span>
+
+              <div onClick={() => navigate('/tripplanner')}
+                className="trip-planner-button">
+                Get an obligation free tour plan from us today!
+              </div>
+              <div> <br /></div>
+              <div onClick={() => navigate('/landmarkteaser')} className="inner-widget-base">
+                Discover landmarks that will make your trip unforgettable
               </div>
 
-              <div onClick={() => navigate('/landmarkteaser')} className="inner-widget-base inner-widget-1">
-                <strong>Must-See Landmarks</strong> <br />
-                Discover iconic spots that will make your trip unforgettable.
-              </div>
             </div>
 
 
@@ -52,7 +52,7 @@ const Home = () => {
 
         </div>
       </div>
-    </div>
+    </div >
   );
 };
 

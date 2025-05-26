@@ -1,17 +1,15 @@
-/* === Home wrapper === */
+/* === General Reset & Wrappers === */
 .home {
     width: 100%;
     box-sizing: border-box;
 }
 
-/* === Banner stays full width === */
 .banner {
     width: 100%;
     display: block;
     box-sizing: border-box;
 }
 
-/* === Layout below the banner === */
 .home-info {
     width: 100%;
     max-width: 1500px;
@@ -20,7 +18,7 @@
     box-sizing: border-box;
 }
 
-/* === Text + Gallery layout === */
+/* === Layout Container Below Banner === */
 .info-container {
     display: flex;
     flex-wrap: wrap;
@@ -31,35 +29,109 @@
     box-sizing: border-box;
 }
 
-/* === Welcome text === */
-.welcome-text,
-.welcome-text-1 {
-    background-color: transparent;
-    padding: 1.5rem;
-    border-radius: 16px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
+/* === Welcome Text Section (Left Box) === */
 .welcome-text {
     flex: 1 1 300px;
     min-width: 300px;
+    background-color: transparent;
+    padding: 1.5rem;
+    border-radius: 16px;
+    font-family: inherit;
 }
 
-.welcome-text-1 {
-    flex: 1 1 500px;
-    min-width: 500px;
-}
-
-/* === Heading inside welcome box === */
 .welcome-heading {
     font-size: 1.5rem;
     background-color: rgb(252, 252, 252);
     color: #313189;
-    padding: 0.5rem 2rem;
+
     border-radius: 8px 8px 0 0;
-    margin: -1.5rem -1.5rem 1rem -1.5rem;
     font-weight: 600;
     text-align: left;
+}
+
+.welcome-subheading {
+    color: #272525;
+    font-size: 1.2rem;
+}
+
+.welcome-text-inner {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    padding: 0.5rem;
+    box-sizing: border-box;
+}
+
+/* === Buttons and Widgets in Welcome Box === */
+.inner-widget-base {
+    display: flex;
+    padding: 0.4rem 0.7rem;
+    border-radius: 6px;
+    white-space: nowrap;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    font-weight: 600;
+    cursor: pointer;
+    color: #000000;
+    background: transparent;
+    transition: background 0.2s ease;
+}
+
+.inner-widget-base:hover {
+    transition: all 0.3s ease;
+    color: rgb(236, 196, 20);
+}
+
+
+
+.trip-planner-button:hover {
+    background: rgb(218, 141, 87);
+    color: black;
+}
+
+.trip-planner-button {
+    height: auto;
+    padding: 1rem;
+    box-sizing: border-box;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    text-align: center;
+    margin-top: 0.5rem;
+    background-color: rgb(218, 141, 87);
+    animation: changeColor 8s ease-in-out infinite alternate;
+}
+
+@keyframes changeColor {
+
+    0% {
+        background-color: transparent;
+        color: black;
+    }
+
+    50% {
+        background-color: rgb(158, 69, 185);
+        color: white;
+    }
+
+    100% {
+        background-color: rgb(218, 141, 87);
+        color: white;
+    }
+
+
+}
+
+
+/* === Right Side Gallery Section === */
+.welcome-text-1 {
+    flex: 1 1 500px;
+    min-width: 500px;
+    background-color: transparent;
+    padding: 1.5rem;
+    border-radius: 16px;
+    font-family: inherit;
 }
 
 .welcome-heading-1 {
@@ -72,7 +144,6 @@
     text-align: center;
 }
 
-/* === Gallery on the right === */
 .gallery-container {
     flex: 1 1 300px;
     min-width: 300px;
@@ -81,76 +152,8 @@
     background-size: cover;
 }
 
-/* === Marquee style === */
-.moving-text {
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-    animation: moveText 50s linear infinite;
-    color: rgb(22, 19, 19);
-    font-weight: bold;
-    margin-bottom: 1rem;
-    text-align: center;
-}
 
-/* === Text animation === */
-@keyframes moveText {
-    0% {
-        transform: translateX(100%);
-    }
-
-    100% {
-        transform: translateX(-100%);
-    }
-}
-
-.welcome-text-inner {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    height: auto;
-    padding: 0.5rem;
-    box-sizing: border-box;
-}
-
-.inner-widget-base {
-    flex: 1 1 240px;
-    min-width: 240px;
-    max-width: 100%;
-    height: auto;
-    padding: 1rem;
-    box-sizing: border-box;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    border-radius: 8px;
-}
-
-.inner-widget {
-    background-color: rgb(136, 99, 159);
-    color: white;
-    margin-bottom: 4%;
-}
-
-.inner-widget-1 {
-    background-color: rgb(72, 189, 91);
-    color: black;
-    margin-top: 4%;
-    margin-left: -3%;
-}
-
-
-
-.inner-widget:hover,
-.inner-widget-1:hover,
-.inner-widget-2:hover,
-.inner-widget-3:hover {
-    box-shadow: 0 6px 16px #0000004d;
-    transition: all 0.3s ease;
-    background-color: rgb(218, 141, 87);
-    color: black;
-}
-
-/* === Responsive Fixes for Zoom/Small Screens === */
+/* === Responsive Fixes === */
 @media (max-width: 768px) {
     .info-container {
         flex-direction: column;
