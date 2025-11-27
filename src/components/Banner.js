@@ -1,113 +1,52 @@
-import { Link, useNavigate, useLocation } from "react-router-dom";
-import "./Banner.css";
-import { AiFillHome } from "react-icons/ai";
-import { FaQuestion, FaPeoplePulling } from "react-icons/fa6";
-import { MdContactMail, MdRateReview } from "react-icons/md";
-import { BiSolidPhoneCall } from "react-icons/bi";
-import Hamburger from "./Hamburger";
+import { Link, useLocation } from "react-router-dom";
+import logo from "./images/logomelong.png";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "./banner.css";
 
 export default function Banner() {
-    const navigate = useNavigate();
     const location = useLocation();
 
     return (
-        <>
-            <div className="wrapper">
-                <div className="banner">
+        <div className="banner position-relative w-100" style={{ minHeight: "175px" }}>
 
-                    {/* <div className="banner-background"></div> */}
-                    <div className="hamburger">
-                        <Hamburger />
-                    </div>
-                    <div className="banner-content">
-                        <div className="logo">
-                            <div className="banner-image"></div>
-                            <div className="text-block">
-                                <p className="heading">Melong Tours & Treks</p>
-                                <p className="subheading">Treks Beyond Trails. Stories Beyond Mountains.</p>
-                            </div>
-                        </div>
+            {/* Overlay */}
+            <div style={{ position: "absolute", inset: 0, backgroundColor: "rgba(0,0,0,0.55)", zIndex: 1 }} />
 
-                        <div className="dropdown-container">
-                            <div className="dropdown">
-                                <button className="dropdown-btn">Services <span className="arrow">&#9662;</span></button>
-                                <div className="dropdown-content">
-                                    <Link to="/treks">Trek</Link>
-                                    <Link to="#">Hotel & Logistics</Link>
-                                    <Link to="#">Guide Service</Link>
-                                    <Link to="#">Hire Cars</Link>
-                                </div>
-                            </div>
+            {/* Logo on left */}
 
-                            <div className="dropdown">
-                                <button className="dropdown-btn">Placeholder <span className="arrow">&#9662;</span></button>
-                                <div className="dropdown-content">
-                                    <Link to="#">option1</Link>
-                                    <Link to="#">option2</Link>
-                                    <Link to="#">option3</Link>
-                                </div>
-                            </div>
 
-                            <div className="dropdown">
-                                <button className="dropdown-btn">Holiday Checklist <span className="arrow">&#9662;</span> </button>
-                                <div className="dropdown-content">
-                                    <Link to="#">Pre Departure Guide</Link>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="tabs-container">
-                            <div className="tabs">
-                                {location.pathname !== "/" && (
-                                    <Link className="home-icon" to="/">
-                                        <span className="icon-label">To Home</span>
-                                    </Link>
-                                )}
-                                <Link className="home-icon" to="/knowus">
-                                    <span className="icon-label">Know us</span>
-                                </Link>
-                                <Link className="home-icon contact-link" to="/contactus">
-                                    <span className="icon-label">Contact us</span>
-                                </Link>
-                                <Link className="home-icon" to="/faq">
-                                    <span className="icon-label">FAQ</span>
-                                </Link>
-                            </div>
 
-                        </div>
+            {/* Logo: hide on mobile (smaller than md) */}
+            <Link to="/" className="position-absolute top-50 start-0 translate-middle-y ms-3 d-none d-md-block" style={{ zIndex: 2 }}>
+                <img src={logo} alt="Melong Tours & Treks" style={{ width: "150px", maxWidth: "20vw", height: "auto" }} />
+            </Link>
 
-                        <div className="mobile-tabs">
-                            {location.pathname !== "/" && (
-                                <Link className="home-icon" to="/">
-                                    <AiFillHome />
-                                    <span className="icon-label">To Home</span>
-                                </Link>
-                            )}
+            {/* Navigation buttons top-right on desktop, under title on mobile */}
+            <div className="position-absolute end-0 top-0 mt-3 me-3 d-none d-md-flex gap-2 flex-wrap" style={{ zIndex: 3 }}>
+                <Link className="btn btn-outline-light btn-sm" to="/">Home</Link>
+                <Link className="btn btn-outline-light btn-sm" to="/knowus">Know Us</Link>
+                <Link className="btn btn-outline-light btn-sm" to="/contactus">Contact Us</Link>
+                <Link className="btn btn-outline-light btn-sm" to="/faq">FAQ</Link>
+            </div>
 
-                            <Link className="home-icon" to="/knowus">
-                                <FaPeoplePulling />
-                                <span className="icon-label">Know us</span>
-                            </Link>
-                            <Link className="home-icon" to="/contactus">
-                                <MdContactMail />
-                                <span className="icon-label">Contact us</span>
-                            </Link>
-                            <Link className="home-icon" to="/faq">
-                                <FaQuestion />
-                                <span className="icon-label">FAQ</span>
-                            </Link>
-                        </div>
-                    </div>
-                </div>
-                <div className="banner-bottom">
-                    <div className="moving-text">
-                        Your trusted guide to unforgettable adventures and heartfelt journeys.
-                        We are registered with the <strong>Tourism Council of Bhutan</strong> and <strong>ABTO (Association of Bhutanese Tour Operators)</strong>.
-                    </div>
+            {/* Center title */}
+            <div className="position-absolute top-50 start-50 translate-middle text-center text-light px-3"
+                style={{ zIndex: 2, width: "90%", maxWidth: "600px", minWidth: "200px" }}>
+                <h1 className="fw-bold mb-1" style={{ fontSize: "1.8rem", lineHeight: "1.2" }}>Melong Tours & Treks</h1>
+                <p className="lead mb-1" style={{ fontSize: "1rem", lineHeight: "1.2" }}>Treks Beyond Trails. Stories Beyond Mountains.</p>
+
+                <div className="d-flex d-md-none flex-wrap justify-content-center mt-4 mb-0 gap-2">
+                    <Link className="btn btn-outline-light btn-sm" to="/">Home</Link>
+                    <Link className="btn btn-outline-light btn-sm" to="/knowus">Know Us</Link>
+                    <Link className="btn btn-outline-light btn-sm" to="/contactus">Contact Us</Link>
+                    <Link className="btn btn-outline-light btn-sm" to="/faq">FAQ</Link>
                 </div>
 
 
 
-            </div >
-        </>
+
+
+            </div>
+        </div>
     );
 }

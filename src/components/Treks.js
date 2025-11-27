@@ -1,6 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import Footer from "./Footer";
 import Banner from "./Banner";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const treks = [
   {
@@ -44,53 +46,41 @@ const treks = [
 
 const Trek = () => {
   const navigate = useNavigate();
+
   return (
     <div>
+      {/* Banner */}
       <Banner />
-      <div style={styles.container}>
-        <h1 style={styles.heading}>Treks in Bhutan</h1>
-        {treks.map((trek, index) => (
-          <div key={index} style={styles.card}>
-            <h2 style={styles.title}>{trek.name}</h2>
-            <p>
-              <strong>Duration:</strong> {trek.duration}
-            </p>
-            <p>
-              <strong>Description:</strong> {trek.description}
-            </p>
-            <p>
-              <strong>Preparation:</strong> {trek.preparation}
-            </p>
-          </div>
-        ))}
-        <button className="button" onClick={() => navigate("/")}>
-          Home
-        </button>
+
+      {/* Trek cards */}
+      <div className="container py-4">
+        <h1 className="text-center mb-4">Treks in Bhutan</h1>
+        <div className="row g-3">
+          {treks.map((trek, index) => (
+            <div className="col-12" key={index}>
+              <div
+                className={`card p-3 shadow-sm ${index % 2 === 0 ? "bg-light" : "bg-white"
+                  }`}
+              >
+                <h2 className="card-title text-primary">{trek.name}</h2>
+                <p><strong>Duration:</strong> {trek.duration}</p>
+                <p><strong>Description:</strong> {trek.description}</p>
+                <p><strong>Preparation:</strong> {trek.preparation}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="text-center mt-4">
+          <button className="btn btn-outline-primary" onClick={() => navigate("/")}>
+            Home
+          </button>
+        </div>
       </div>
+
+      <Footer />
     </div>
   );
-};
-
-const styles = {
-  container: {
-    padding: "20px",
-    maxWidth: "800px",
-    margin: "0 auto",
-  },
-  heading: {
-    textAlign: "center",
-    marginBottom: "10px",
-  },
-  card: {
-    backgroundColor: "#f5f5f5",
-    padding: "10px",
-    borderRadius: "10px",
-    boxShadow: "0 4px 6px rgba(0,0,0,0.1)",
-  },
-  title: {
-    color: "#2c3e50",
-    marginBottom: "5px",
-  },
 };
 
 export default Trek;

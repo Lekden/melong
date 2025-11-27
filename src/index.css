@@ -5,6 +5,18 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+  overflow-y: scroll;
+  /* enable vertical scrolling */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari, Edge */
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

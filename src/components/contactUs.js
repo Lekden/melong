@@ -1,12 +1,14 @@
-import './Home.css';
-import './contactUs.css';
-import { useNavigate, Link } from 'react-router-dom';
-import Banner from './Banner';
+
+import { useNavigate, Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
+import Footer from './Footer';
+import logo from "./images/logomelongwhite.png";
+import Banner from "./Banner";
 
 export default function ContactUs() {
     const navigate = useNavigate();
+    const location = useLocation();
     const [formData, setFormData] = useState({ requestor: "", email: "", phone: "", message: "" });
 
     function handleSubmit(e) {
@@ -24,10 +26,8 @@ export default function ContactUs() {
             message: formData.message,
         };
 
-        // Send main email to site
         emailjs.send(serviceID, templateID, templateParams, publicKey)
             .then((response) => {
-                console.log('SUCCESS!', response.status, response.text);
                 alert("Your email has been sent successfully.");
 
                 const autoReplyParams = {
@@ -35,10 +35,8 @@ export default function ContactUs() {
                     email: formData.email,
                 };
 
-                // Send auto-reply to user
                 emailjs.send(serviceID, autoReplyTemplateID, autoReplyParams, publicKey)
                     .then((res) => {
-                        console.log('Auto-reply sent:', res.text);
                         setFormData({ requestor: "", email: "", phone: "", message: "" });
                     })
                     .catch((err) => {
@@ -51,79 +49,92 @@ export default function ContactUs() {
             });
     }
 
-    const handleKeyDown = (e) => {
-        if (e.key === 'Enter') {
-            e.preventDefault();
-        }
-    };
-
     return (
-        <div>
+        <div className="bg-light">
+
             <Banner />
-            <div className='contactUs'>
-                <form onSubmit={handleSubmit}>
-                    <h1 className="heading1">Contact Us</h1>
-                    <div>
-                        Have a quick question? Feel free to use this form. <br />
-                        For a trip estimate, please visit the <Link to="/tripplanner" style={{ color: 'rgb(40, 71, 157)' }}>Trip Planner</Link> section under the Booking tab. <br />  <br />
+            {/* ===================== MAIN CONTENT ===================== */}
+            <div className="container py-3">
+
+                <h1 className="text-center mb-4">Contact Us</h1>
+
+                <p className="text-center">
+                    Have a quick question? Feel free to use this form. <br />
+                    For a trip estimate, visit the{" "}
+                    <Link to="/tripplanner" className="text-primary fw-bold">
+                        Trip Planner
+                    </Link>.
+                </p>
+
+                {/* Form Row */}
+                <div className="row justify-content-center">
+                    <div className="col-md-8 col-lg-6">
+
+                        <form onSubmit={handleSubmit} className="p-4 border rounded shadow-sm bg-white">
+
+                            <div className="mb-3">
+                                <label className="form-label">Your Name</label>
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    value={formData.requestor}
+                                    onChange={(e) => setFormData({ ...formData, requestor: e.target.value })}
+                                    required
+                                />
+                            </div>
+
+                            <div className="mb-3">
+                                <label className="form-label">Your Email</label>
+                                <input
+                                    type="email"
+                                    className="form-control"
+                                    value={formData.email}
+                                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                                    required
+                                />
+                            </div>
+
+                            <div className="mb-3">
+                                <label className="form-label">Your Phone Number</label>
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    value={formData.phone}
+                                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                                />
+                            </div>
+
+                            <div className="mb-3">
+                                <label className="form-label">Your Message</label>
+                                <textarea
+                                    className="form-control"
+                                    rows="4"
+                                    value={formData.message}
+                                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                                    required
+                                ></textarea>
+                            </div>
+
+                            <div className="d-flex justify-content-between mt-4">
+                                <button type="submit" className="btn btn-primary px-4">Submit</button>
+                                <button type="button" className="btn btn-secondary px-4" onClick={() => navigate('/')}>
+                                    Back to Home
+                                </button>
+                            </div>
+
+                        </form>
+
+                        <div className="text-center mt-4">
+                            <p className="fw-semibold mb-1">Contact Information</p>
+                            <p>Phone: +975 12345678 | Email: abc@melong.bt</p>
+                        </div>
+
                     </div>
-
-
-                    <label>Your Name</label>
-                    <input
-                        type="text"
-                        placeholder="Name"
-                        className="input-field"
-                        value={formData.requestor}
-                        onChange={(e) => setFormData({ ...formData, requestor: e.target.value })}
-                        onKeyDown={handleKeyDown}
-                        required
-                    />
-
-                    <label>Your Email</label>
-                    <input
-                        type="email"
-                        placeholder="Email"
-                        className="input-field"
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        required
-                    />
-
-                    <label>Your Phone Number</label>
-                    <input
-                        type="text"
-                        placeholder="Phone number"
-                        className="input-field"
-                        value={formData.phone}
-                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    />
-
-                    <label>Your Message</label>
-                    <textarea
-                        placeholder="Message"
-                        className="input-field"
-                        rows="4"
-                        value={formData.message}
-                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                        required
-                    ></textarea>
-
-                    <div className='button-contactUs'>
-                        <button type="submit" className="button" style={{ width: '150px' }}>
-                            Submit
-                        </button>
-                        <button type="button" className="button" style={{ width: '150px' }} onClick={() => navigate('/')}>
-                            Back to Home
-                        </button>
-                    </div>
-                </form>
-
-                <div>
-                    <p style={{ fontWeight: '600', fontSize: '1rem' }}>Contact Information</p>
-                    <p>Phone: +975 12345678 || Email: abc@melong.bt</p>
                 </div>
+
             </div>
+
+            <Footer />
         </div>
     );
 }

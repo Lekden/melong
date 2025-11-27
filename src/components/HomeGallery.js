@@ -1,18 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import './HomeGallery.css';
+import Banner from './Banner';
+import Footer from './Footer';
 
 const HomeGallery = () => {
     const images = [
-        '/melong/images/TigersNest.jpg',
-        '/melong/images/Gangtey.jpg',
-        '/melong/images/bhutan.jpg',
-        '/melong/images/tashichhodzong.jpg',
-        '/melong/images/Buddha.jpg',
+        { src: '/melong/images/TigersNest.jpg', label: "Tiger's Nest - Paro" },
+        { src: '/melong/images/Gangtey.jpg', label: "Gangtey Valley - Wangdephodrang" },
+        { src: '/melong/images/bhutan.jpg', label: "Dochula - Thimphu" },
+        { src: '/melong/images/tashichhodzong.jpg', label: "Tashichho Dzong - Thimphu" },
+        { src: '/melong/images/Buddha.jpg', label: "Buddha Dordenma - Thimphu" },
     ];
 
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-    // Auto-rotate images every 5 seconds (matches animation duration)
     useEffect(() => {
         const timer = setTimeout(() => {
             setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -22,21 +23,25 @@ const HomeGallery = () => {
     }, [currentImageIndex, images.length]);
 
     return (
-        <div className="home-gallery">
-            <div className="image-container">
-                <img
-                    key={currentImageIndex}  // forces remount & restarts animation
-                    src={images[currentImageIndex]}
-                    alt={`Gallery ${currentImageIndex + 1}`}
-                    className="gallery-image zoom-animation"
-                />
-
-                {/* Removed buttons here */}
-
-                <div className="image-index">
-                    {currentImageIndex + 1} / {images.length}
+        <div>
+            <Banner />
+            <div className="home-gallery">
+                <div className="image-container">
+                    <img
+                        key={currentImageIndex}
+                        src={images[currentImageIndex].src}
+                        alt={images[currentImageIndex].label}
+                        className="gallery-image zoom-animation"
+                    />
+                    <div className="image-label">
+                        {images[currentImageIndex].label}
+                    </div>
+                    <div className="image-index">
+                        {currentImageIndex + 1} / {images.length}
+                    </div>
                 </div>
             </div>
+            <Footer />
         </div>
     );
 };
